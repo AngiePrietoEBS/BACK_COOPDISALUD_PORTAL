@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:data" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:data">
+<types>
+<xsd:schema targetNamespace="urn:data"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+</xsd:schema>
+</types>
+<message name="consulltaListasRequest">
+  <part name="data" type="xsd:string" />
+  <part name="token" type="xsd:string" />
+  <part name="nit" type="xsd:string" />
+  <part name="opcion" type="xsd:string" /></message>
+<message name="consulltaListasResponse">
+  <part name="mensaje" type="xsd:string" /></message>
+<message name="conCantConsulRequest">
+  <part name="token" type="xsd:string" />
+  <part name="nit" type="xsd:string" />
+  <part name="opcion" type="xsd:string" /></message>
+<message name="conCantConsulResponse">
+  <part name="mensaje" type="xsd:string" /></message>
+<message name="generarPDFRequest">
+  <part name="identificacion" type="xsd:string" />
+  <part name="nombre" type="xsd:string" />
+  <part name="token" type="xsd:string" />
+  <part name="nit" type="xsd:string" />
+  <part name="hacerConsulta" type="xsd:string" />
+  <part name="ruta" type="xsd:string" /></message>
+<message name="generarPDFResponse">
+  <part name="mensaje" type="xsd:string" /></message>
+<message name="probarWSRequest">
+  <part name="nombre" type="xsd:string" /></message>
+<message name="probarWSResponse">
+  <part name="mensaje" type="xsd:string" /></message>
+<portType name="dataPortType">
+  <operation name="consulltaListas">
+    <documentation>Nos da una matriz seriializada con el resultado de las listas restrictivas</documentation>
+    <input message="tns:consulltaListasRequest"/>
+    <output message="tns:consulltaListasResponse"/>
+  </operation>
+  <operation name="conCantConsul">
+    <documentation>Nos da una matriz seriializada con el resultado de la cantidad de paquetes de consulta contratados con su respectiva cantidad contratada, consultada y tipo de consulta</documentation>
+    <input message="tns:conCantConsulRequest"/>
+    <output message="tns:conCantConsulResponse"/>
+  </operation>
+  <operation name="generarPDF">
+    <documentation>Genera el pdf y lo guarda en un FTP, es de manera individual</documentation>
+    <input message="tns:generarPDFRequest"/>
+    <output message="tns:generarPDFResponse"/>
+  </operation>
+  <operation name="probarWS">
+    <documentation>Prueba ws</documentation>
+    <input message="tns:probarWSRequest"/>
+    <output message="tns:probarWSResponse"/>
+  </operation>
+</portType>
+<binding name="dataBinding" type="tns:dataPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="consulltaListas">
+    <soap:operation soapAction="urn:data#consulltaListas" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:data" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:data" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="conCantConsul">
+    <soap:operation soapAction="urn:data#conCantConsul" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:data" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:data" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="generarPDF">
+    <soap:operation soapAction="urn:data#generarPDF" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:data" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:data" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="probarWS">
+    <soap:operation soapAction="urn:data#probarWS" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:data" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:data" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="data">
+  <port name="dataPort" binding="tns:dataBinding">
+    <soap:address location="http://appswebpre.ebscreditodigital.com/AML/WS/WSamlEthos.php"/>
+  </port>
+</service>
+</definitions>

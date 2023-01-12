@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-WSClientCygnus" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSClientCygnus"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSClientCygnus" destdir="${build.generated.dir}/jax-wsCache/WSClientCygnus" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSClientCygnus/wsdl/129.158.242.142/WSCygnusCoopedac/WSClientCygnus.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://10.10.30.35/WSCygnusCoopedac/WSClientCygnus.asmx?WSDL" xnocompile="true" xendorsed="true" package="WSCygnusCoopedac">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSClientCygnus/wsdl/129.158.242.142/WSCygnusCoopedac/WSClientCygnus.asmx.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSClientCygnus"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSClientCygnus">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSClientCygnus" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/WSCygnusCoopedac"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSClientCygnus"/>
+    </target>
+    <target name="wsimport-client-WSPersonasCygnus" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSPersonasCygnus"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSPersonasCygnus" destdir="${build.generated.dir}/jax-wsCache/WSPersonasCygnus" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSPersonasCygnus/wsdl/129.158.242.142/WSPersonasCygnus/WSPersonasCygnus.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://10.10.30.35/WSPersonasCygnus/WSPersonasCygnus.asmx?WSDL" xnocompile="true" xendorsed="true" package="WSPersonasCygnus">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSPersonasCygnus/wsdl/129.158.242.142/WSPersonasCygnus/WSPersonasCygnus.asmx.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSPersonasCygnus"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSPersonasCygnus">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSPersonasCygnus" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/WSPersonasCygnus"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSPersonasCygnus"/>
+    </target>
+    <target name="wsimport-client-WSScoreWLO" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSScoreWLO"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSScoreWLO" destdir="${build.generated.dir}/jax-wsCache/WSScoreWLO" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSScoreWLO/wsdl/129.158.242.142/WSScoreWLOCoopedac/WSScoreWLO.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://10.10.30.35/WSScoreWLOCoopedac/WSScoreWLO.asmx?WSDL" xnocompile="true" xendorsed="true" package="WSScoreCoopedac">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSScoreWLO/wsdl/129.158.242.142/WSScoreWLOCoopedac/WSScoreWLO.asmx.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSScoreWLO"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSScoreWLO">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSScoreWLO" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/WSScoreCoopedac"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSScoreWLO"/>
+    </target>
+    <target name="wsimport-client-WSClientAdministracion" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSClientAdministracion"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSClientAdministracion" destdir="${build.generated.dir}/jax-wsCache/WSClientAdministracion" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSClientAdministracion/wsdl/129.158.242.142/WSAdministracionCoopedac/WSClientAdministracion.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://10.10.30.35/WSAdministracionCoopedac/WSClientAdministracion.asmx?WSDL" xnocompile="true" xendorsed="true" package="WSAdminCoopedac">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSClientAdministracion/wsdl/129.158.242.142/WSAdministracionCoopedac/WSClientAdministracion.asmx.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSClientAdministracion"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSClientAdministracion">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSClientAdministracion" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/WSAdminCoopedac"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSClientAdministracion"/>
+    </target>
+    <target name="wsimport-client-WSClientEstadoCuenta" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSClientEstadoCuenta"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSClientEstadoCuenta" destdir="${build.generated.dir}/jax-wsCache/WSClientEstadoCuenta" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSClientEstadoCuenta/wsdl/129.158.242.142/WSEstadoCuentaCoopedac/WSClientEstadoCuenta.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://10.10.30.35/WSEstadoCuentaCoopedac/WSClientEstadoCuenta.asmx?WSDL" xnocompile="true" xendorsed="true" package="WSEstadoCuentaCoopedac">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSClientEstadoCuenta/wsdl/129.158.242.142/WSEstadoCuentaCoopedac/WSClientEstadoCuenta.asmx.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSClientEstadoCuenta"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSClientEstadoCuenta">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSClientEstadoCuenta" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/WSEstadoCuentaCoopedac"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSClientEstadoCuenta"/>
+    </target>
+    <target name="wsimport-client-Ws_CuentaAhorros" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Ws_CuentaAhorros"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Ws_CuentaAhorros" destdir="${build.generated.dir}/jax-wsCache/Ws_CuentaAhorros" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/Ws_CuentaAhorros/wsdl/129.158.242.142/Ws_CuentaAhorros/Ws_CuentaAhorros.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://10.10.30.35/Ws_CuentaAhorros/Ws_CuentaAhorros.asmx?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/Ws_CuentaAhorros/wsdl/129.158.242.142/Ws_CuentaAhorros/Ws_CuentaAhorros.asmx.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Ws_CuentaAhorros"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Ws_CuentaAhorros">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Ws_CuentaAhorros" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws_cuentaahorros"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/Ws_CuentaAhorros"/>
+    </target>
+    <target name="wsimport-client-WSReglasOtorgamientoCoopedac" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSReglasOtorgamientoCoopedac"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSReglasOtorgamientoCoopedac" destdir="${build.generated.dir}/jax-wsCache/WSReglasOtorgamientoCoopedac" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSReglasOtorgamientoCoopedac/wsdl/129.158.242.142/WSReglasOtorgamientoCoopedac/WSReglasOtorgamientoCoopedac.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://10.10.30.35/WSReglasOtorgamientoCoopedac/WSReglasOtorgamientoCoopedac.asmx?WSDL" xnocompile="true" xendorsed="true" package="WSReglasOtorgamientoCoopedac">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSReglasOtorgamientoCoopedac/wsdl/129.158.242.142/WSReglasOtorgamientoCoopedac/WSReglasOtorgamientoCoopedac.asmx.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSReglasOtorgamientoCoopedac"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSReglasOtorgamientoCoopedac">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSReglasOtorgamientoCoopedac" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/WSReglasOtorgamientoCoopedac"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSReglasOtorgamientoCoopedac"/>
+    </target>
+    <target name="wsimport-client-WSSimuladorCreditoCoopedac" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSSimuladorCreditoCoopedac"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSSimuladorCreditoCoopedac" destdir="${build.generated.dir}/jax-wsCache/WSSimuladorCreditoCoopedac" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSSimuladorCreditoCoopedac/wsdl/129.158.242.142/WSSimuladorCreditoCoopedac/WSSimuladorCreditoCoopedac.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://129.213.113.194/WSSimuladorCreditoCoopedac/WSSimuladorCreditoCoopedac.asmx?WSDL" xnocompile="true" xendorsed="true" package="WSSimuladorCreditoCoopedac">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSSimuladorCreditoCoopedac/wsdl/129.158.242.142/WSSimuladorCreditoCoopedac/WSSimuladorCreditoCoopedac.asmx.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSSimuladorCreditoCoopedac"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSSimuladorCreditoCoopedac">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSSimuladorCreditoCoopedac" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/WSSimuladorCreditoCoopedac"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSSimuladorCreditoCoopedac"/>
+    </target>
+    <target name="wsimport-client-WebServicePSE" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WebServicePSE"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WebServicePSE" destdir="${build.generated.dir}/jax-wsCache/WebServicePSE" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WebServicePSE/wsdl/190.85.106.122_8080/Coopedac/WebServicePSE.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://190.85.106.122:8080/Coopedac/WebServicePSE?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WebServicePSE/wsdl/190.85.106.122_8080/Coopedac/WebServicePSE.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WebServicePSE"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WebServicePSE">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WebServicePSE" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/webservice"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WebServicePSE"/>
+    </target>
+    <target name="wsimport-client-WsProductosCygnus" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WsProductosCygnus"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WsProductosCygnus" destdir="${build.generated.dir}/jax-wsCache/WsProductosCygnus" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WsProductosCygnus/wsdl/129.158.242.142/WsProductosCygnus/WsProductosCygnus.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://129.158.242.142/WsProductosCygnus/WsProductosCygnus.asmx?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WsProductosCygnus/wsdl/129.158.242.142/WsProductosCygnus/WsProductosCygnus.asmx.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WsProductosCygnus"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WsProductosCygnus">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WsProductosCygnus" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/wsproductoscygnus"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WsProductosCygnus"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSClientCygnus, wsimport-client-WSPersonasCygnus, wsimport-client-WSScoreWLO, wsimport-client-WSClientAdministracion, wsimport-client-WSClientEstadoCuenta, wsimport-client-Ws_CuentaAhorros, wsimport-client-WSReglasOtorgamientoCoopedac, wsimport-client-WSSimuladorCreditoCoopedac, wsimport-client-WebServicePSE, wsimport-client-WsProductosCygnus"/>
+</project>

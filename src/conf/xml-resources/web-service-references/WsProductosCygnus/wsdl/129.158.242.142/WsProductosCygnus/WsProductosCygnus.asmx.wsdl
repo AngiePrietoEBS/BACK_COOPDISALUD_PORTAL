@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="WsProductosCygnus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="WsProductosCygnus" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="WsProductosCygnus">
+      <s:element name="pruebaConexion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ps_DB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="pruebaConexionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pruebaConexionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listadoCreditosradicado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ps_Identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_num_radic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listadoCreditosradicadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listadoCreditosradicadoResult" type="tns:RespuestaCreditos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaCreditos">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Resultado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="cntCreditos" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InfoCredito" type="tns:ArrayOfDatosCredito" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SalFunctionalClass" />
+      <s:complexType name="DatosCredito">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="estadoGeneral" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="diasMora" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="numeroCredito" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="numDestino" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="numPagare" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="avalado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="linea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="nomLinea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="observacion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TC" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="fechaSolicitud" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="fechaAprobacion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="fechaVencimiento" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="montoSolicitado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="montoAprobado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="valorDesembolsado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="saldo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="valorCuota" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="atributos" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="numeroCuotas" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="numeroCuotasPagadas" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="formatoPlazo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="formaPago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="pagaduria" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="periodicidad" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="estadoCredito" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="exclusion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="fecProximoPago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="fechaUltimoPago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="garantia" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="valorPagarHoy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="valorPagarTotal" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="oficina" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="estadoJuridico" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="calificacion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="cuotasAtrasadas" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatosCredito">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DatosCredito" nillable="true" type="tns:DatosCredito" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="deudor_codeudor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ps_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_NumRadic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_cod_destino" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ps_clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deudor_codeudorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deudor_codeudorResult" type="tns:RespuestaCodeudor" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaCodeudor">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Resultado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="cntCodeudores" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InfoCodeudor" type="tns:ArrayOfDatosPersona" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatosPersona">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DatosPersona" nillable="true" type="tns:DatosPersona" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DatosPersona">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="numeroradicado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="codigoCliente" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="codTipoIdentificacion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="nomTipoIdentificacion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="identificacion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="nombres" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="apellidos" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="fechaNacimiento" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="estadoActual" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="tipoCliente" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="nomTipoCliente" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="fechaIngreso" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="codEmpresa" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="nomEmpresa" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="direcciones" type="tns:ArrayOfDatosDireccion" />
+              <s:element minOccurs="0" maxOccurs="1" name="telefonos" type="tns:ArrayOfDatosTelefono" />
+              <s:element minOccurs="0" maxOccurs="1" name="correos" type="tns:ArrayOfDatosCorreo" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatosDireccion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DatosDireccion" nillable="true" type="tns:DatosDireccion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DatosDireccion">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="codTipoDireccion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="nomTipoDireccion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Principal" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatosTelefono">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DatosTelefono" nillable="true" type="tns:DatosTelefono" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DatosTelefono">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="codTipoTelefono" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="nomTipoTelefono" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Principal" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatosCorreo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DatosCorreo" nillable="true" type="tns:DatosCorreo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DatosCorreo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="codTipoCorreo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="nomTipoCorreo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Principal" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="pruebaConexionSoapIn">
+    <wsdl:part name="parameters" element="tns:pruebaConexion" />
+  </wsdl:message>
+  <wsdl:message name="pruebaConexionSoapOut">
+    <wsdl:part name="parameters" element="tns:pruebaConexionResponse" />
+  </wsdl:message>
+  <wsdl:message name="listadoCreditosradicadoSoapIn">
+    <wsdl:part name="parameters" element="tns:listadoCreditosradicado" />
+  </wsdl:message>
+  <wsdl:message name="listadoCreditosradicadoSoapOut">
+    <wsdl:part name="parameters" element="tns:listadoCreditosradicadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="deudor_codeudorSoapIn">
+    <wsdl:part name="parameters" element="tns:deudor_codeudor" />
+  </wsdl:message>
+  <wsdl:message name="deudor_codeudorSoapOut">
+    <wsdl:part name="parameters" element="tns:deudor_codeudorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsProductosCygnusSoap">
+    <wsdl:operation name="pruebaConexion">
+      <wsdl:input message="tns:pruebaConexionSoapIn" />
+      <wsdl:output message="tns:pruebaConexionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listadoCreditosradicado">
+      <wsdl:input message="tns:listadoCreditosradicadoSoapIn" />
+      <wsdl:output message="tns:listadoCreditosradicadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deudor_codeudor">
+      <wsdl:input message="tns:deudor_codeudorSoapIn" />
+      <wsdl:output message="tns:deudor_codeudorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsProductosCygnusSoap" type="tns:WsProductosCygnusSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="pruebaConexion">
+      <soap:operation soapAction="WsProductosCygnus/pruebaConexion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listadoCreditosradicado">
+      <soap:operation soapAction="WsProductosCygnus/listadoCreditosradicado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deudor_codeudor">
+      <soap:operation soapAction="WsProductosCygnus/deudor_codeudor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsProductosCygnusSoap12" type="tns:WsProductosCygnusSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="pruebaConexion">
+      <soap12:operation soapAction="WsProductosCygnus/pruebaConexion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listadoCreditosradicado">
+      <soap12:operation soapAction="WsProductosCygnus/listadoCreditosradicado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deudor_codeudor">
+      <soap12:operation soapAction="WsProductosCygnus/deudor_codeudor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsProductosCygnus">
+    <wsdl:port name="WsProductosCygnusSoap" binding="tns:WsProductosCygnusSoap">
+      <soap:address location="http://129.158.242.142/WsProductosCygnus/WsProductosCygnus.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsProductosCygnusSoap12" binding="tns:WsProductosCygnusSoap12">
+      <soap12:address location="http://129.158.242.142/WsProductosCygnus/WsProductosCygnus.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

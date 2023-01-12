@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="ws_cuentaAhorros" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="ws_cuentaAhorros" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="ws_cuentaAhorros">
+      <s:element name="listadoCuentas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_identific" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listadoCuentasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listadoCuentasResult" type="tns:RespuestaInfoCuentas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaInfoCuentas">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="bOk" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="sRespuesta" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="infoCuentas" type="tns:ArrayOfListadoCuentasAhorro" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SalFunctionalClass" />
+      <s:complexType name="ListadoCuentasAhorro">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="numero_cuenta" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="linea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="nombre_linea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="destino" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="saldo_total" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="fecha_apertura" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfListadoCuentasAhorro">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ListadoCuentasAhorro" nillable="true" type="tns:ListadoCuentasAhorro" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="creaCuenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_identific" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_beneficiarios" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_codLinea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_codOficina" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_Modalidad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_fechaApertura" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_tipoInteres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_codTipoTasa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_tasaIntHistorica" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_desviacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_codTipoTasaHistorica" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_exentoRetefuente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="creaCuentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="creaCuentaResult" type="tns:RespuestaCreaCuentas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaCreaCuentas">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="bOk" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="sRespuesta" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="sNumCuentaCreado" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="listadoLineasAhorro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listadoLineasAhorroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listadoLineasAhorroResult" type="tns:RespuestaListado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaListado">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="bOk" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="sRespuesta" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="lista" type="tns:ArrayOfListado" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfListado">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Listado" nillable="true" type="tns:Listado" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Listado">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="listadoOficinas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listadoOficinasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listadoOficinasResult" type="tns:RespuestaListado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listadoTipoTasa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listadoTipoTasaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listadoTipoTasaResult" type="tns:RespuestaListado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listadoTipoTasaHistorica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listadoTipoTasaHistoricaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listadoTipoTasaHistoricaResult" type="tns:RespuestaListado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="listadoCuentasSoapIn">
+    <wsdl:part name="parameters" element="tns:listadoCuentas" />
+  </wsdl:message>
+  <wsdl:message name="listadoCuentasSoapOut">
+    <wsdl:part name="parameters" element="tns:listadoCuentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="creaCuentaSoapIn">
+    <wsdl:part name="parameters" element="tns:creaCuenta" />
+  </wsdl:message>
+  <wsdl:message name="creaCuentaSoapOut">
+    <wsdl:part name="parameters" element="tns:creaCuentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="listadoLineasAhorroSoapIn">
+    <wsdl:part name="parameters" element="tns:listadoLineasAhorro" />
+  </wsdl:message>
+  <wsdl:message name="listadoLineasAhorroSoapOut">
+    <wsdl:part name="parameters" element="tns:listadoLineasAhorroResponse" />
+  </wsdl:message>
+  <wsdl:message name="listadoOficinasSoapIn">
+    <wsdl:part name="parameters" element="tns:listadoOficinas" />
+  </wsdl:message>
+  <wsdl:message name="listadoOficinasSoapOut">
+    <wsdl:part name="parameters" element="tns:listadoOficinasResponse" />
+  </wsdl:message>
+  <wsdl:message name="listadoTipoTasaSoapIn">
+    <wsdl:part name="parameters" element="tns:listadoTipoTasa" />
+  </wsdl:message>
+  <wsdl:message name="listadoTipoTasaSoapOut">
+    <wsdl:part name="parameters" element="tns:listadoTipoTasaResponse" />
+  </wsdl:message>
+  <wsdl:message name="listadoTipoTasaHistoricaSoapIn">
+    <wsdl:part name="parameters" element="tns:listadoTipoTasaHistorica" />
+  </wsdl:message>
+  <wsdl:message name="listadoTipoTasaHistoricaSoapOut">
+    <wsdl:part name="parameters" element="tns:listadoTipoTasaHistoricaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Ws_CuentaAhorrosSoap">
+    <wsdl:operation name="listadoCuentas">
+      <wsdl:input message="tns:listadoCuentasSoapIn" />
+      <wsdl:output message="tns:listadoCuentasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="creaCuenta">
+      <wsdl:input message="tns:creaCuentaSoapIn" />
+      <wsdl:output message="tns:creaCuentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listadoLineasAhorro">
+      <wsdl:input message="tns:listadoLineasAhorroSoapIn" />
+      <wsdl:output message="tns:listadoLineasAhorroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listadoOficinas">
+      <wsdl:input message="tns:listadoOficinasSoapIn" />
+      <wsdl:output message="tns:listadoOficinasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listadoTipoTasa">
+      <wsdl:input message="tns:listadoTipoTasaSoapIn" />
+      <wsdl:output message="tns:listadoTipoTasaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listadoTipoTasaHistorica">
+      <wsdl:input message="tns:listadoTipoTasaHistoricaSoapIn" />
+      <wsdl:output message="tns:listadoTipoTasaHistoricaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Ws_CuentaAhorrosSoap" type="tns:Ws_CuentaAhorrosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listadoCuentas">
+      <soap:operation soapAction="ws_cuentaAhorros/listadoCuentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="creaCuenta">
+      <soap:operation soapAction="ws_cuentaAhorros/creaCuenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listadoLineasAhorro">
+      <soap:operation soapAction="ws_cuentaAhorros/listadoLineasAhorro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listadoOficinas">
+      <soap:operation soapAction="ws_cuentaAhorros/listadoOficinas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listadoTipoTasa">
+      <soap:operation soapAction="ws_cuentaAhorros/listadoTipoTasa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listadoTipoTasaHistorica">
+      <soap:operation soapAction="ws_cuentaAhorros/listadoTipoTasaHistorica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Ws_CuentaAhorrosSoap12" type="tns:Ws_CuentaAhorrosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listadoCuentas">
+      <soap12:operation soapAction="ws_cuentaAhorros/listadoCuentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="creaCuenta">
+      <soap12:operation soapAction="ws_cuentaAhorros/creaCuenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listadoLineasAhorro">
+      <soap12:operation soapAction="ws_cuentaAhorros/listadoLineasAhorro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listadoOficinas">
+      <soap12:operation soapAction="ws_cuentaAhorros/listadoOficinas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listadoTipoTasa">
+      <soap12:operation soapAction="ws_cuentaAhorros/listadoTipoTasa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listadoTipoTasaHistorica">
+      <soap12:operation soapAction="ws_cuentaAhorros/listadoTipoTasaHistorica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Ws_CuentaAhorros">
+    <wsdl:port name="Ws_CuentaAhorrosSoap" binding="tns:Ws_CuentaAhorrosSoap">
+      <soap:address location="http://129.213.113.194/Ws_CuentaAhorros/Ws_CuentaAhorros.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Ws_CuentaAhorrosSoap12" binding="tns:Ws_CuentaAhorrosSoap12">
+      <soap12:address location="http://129.213.113.194/Ws_CuentaAhorros/Ws_CuentaAhorros.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

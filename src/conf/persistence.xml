@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="WSRestApiCoopedac" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.ebssas.wsrestapicoopedac.domain.Usuario</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.InformacionDesembolso</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.OperacionFinanciera</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.InformacionConyuge</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.Comunicacion</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.PerfilTransaccional</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.SessionUsuario</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.TipoAcceso</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.TipoMensaje</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.TipoParentesco</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.TipoCanal</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.HistoriaSolCredito</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.AutorizacionSolCredito</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.Acceso</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.DatosPersonales</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.CorrespondenciaSolCredito</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.TipoTransaccion</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.Parametros</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.OcupacionPersona</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.TipoEstadoSolicitudCredito</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.Evento</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.Origen</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.ReferenciaSolCredito</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.SolicitudCredito</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.Persona</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.InformacionPep</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.OperacionExtranjera</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.TipoReferencia</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.AccesoUsuario</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.TipoComunicacion</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.Transaccion</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.TipoPerfil</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.TipoDesembolso</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.TipoEvento</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.CondicionCuenta</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.ValidacionAccesoPersona</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.NewEntity</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.DocumentoFinanciero</class>
+        <class>com.ebssas.wsrestapicoopedac.domain.DocumentoFirma</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@//10.0.0.138:1521/COOPEDACWEBTEST.subnet02180656.vcn02180656.oraclevcn.com"/>
+            <property name="javax.persistence.jdbc.user" value="sysadm"/>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="javax.persistence.jdbc.password" value="sysadm"/>
+<!--            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@//10.0.1.175:1521/PRCOOPEDACPDB.subredprivada.vcn02180656.oraclevcn.com"/>
+            <property name="javax.persistence.jdbc.user" value="sysadm"/>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="javax.persistence.jdbc.password" value="sysadm"/>-->
+            <!--            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin//@10.0.1.175:1521/PRCOOPEDACPDB.subredprivada.vcn02180656.oraclevcn.com"/>
+            <property name="javax.persistence.jdbc.user" value="sysadm"/>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="javax.persistence.jdbc.password" value="sysadm"/>-->
+            <!--            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@198.38.85.158:1521:DEMOWEB"/>
+            <property name="javax.persistence.jdbc.user" value="COOPEDACWEB"/>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="javax.persistence.jdbc.password" value="C00P3D4CW38*"/>-->
+        </properties>
+    </persistence-unit>
+</persistence>

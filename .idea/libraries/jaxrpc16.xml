@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="jaxrpc16">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jaxrpc16/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxrpc16/jax-qname.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxrpc16/jaxp-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxrpc16/relaxngDatatype.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxrpc16/jaxrpc-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxrpc16/jsr173_api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxrpc16/jaxrpc-spi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxrpc16/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxrpc16/jaxrpc-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxrpc16/saaj-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxrpc16/FastInfoset.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxrpc16/xsdlib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxrpc16/saaj-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

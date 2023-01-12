@@ -1,0 +1,3444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="WC_CONSULTAR_EMPRESA">
+        <s:complexType />
+      </s:element>
+      <s:element name="WC_CONSULTAR_EMPRESAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_EMPRESAResult" type="tns:ArrayOfEmpresaDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEmpresaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="empresaDTO" nillable="true" type="tns:empresaDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="empresaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_CARGO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_cargo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_num_puestos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_salario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_puntaje_min" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_CARGOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_CARGOResult" type="tns:ArrayOfCargoDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCargoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="cargoDTO" nillable="true" type="tns:cargoDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="cargoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Cargo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Num_Puestos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Salario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Puntaje_Min" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_CIUDAD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_nivel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_ind_nal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_ind_internal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_ubicacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_cod_sugef" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_CIUDADResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_CIUDADResult" type="tns:ArrayOfCiudadDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCiudadDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ciudadDTO" nillable="true" type="tns:ciudadDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ciudadDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Nivel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ind_Nal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ind_Internal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ubicacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Cod_Sugef" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_OFICINA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_und_negocio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_centro_costo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_ciudad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_res" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_host" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_apartado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tip_dep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_num_empleados" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xs_aten_ini" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xs_aten_fin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xs_per_ini" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xs_per_fin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_OFICINAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_OFICINAResult" type="tns:ArrayOfOficinaDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOficinaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="oficinaDTO" nillable="true" type="tns:oficinaDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="oficinaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Und_Negocio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Centro_Costo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ciudad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Direccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Res" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Host" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Apartado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tip_Dep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Num_Empleados" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="S_Aten_Ini" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="S_Aten_Fin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="S_Per_Ini" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="S_Per_Fin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_PERSONAS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_PERSONASResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_PERSONASResult" type="tns:ArrayOfPersonasDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPersonasDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="personasDTO" nillable="true" type="tns:personasDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="personasDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Tipo_Person" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Identificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Iden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ciudad_Exp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Codigo_Asoc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Cliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fecha_Exp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Retencion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="N_Distrib" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Forma_Pago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Dia_Pago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Vinculac_Lab" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Direccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_E_Mail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Clave" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Clave_Int" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fec_Ingreso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fec_Ing_Emp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Oficina" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fec_Sistema" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Acto_Ad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Act_Ec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Asesor_Com" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Numveccod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Numactadm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Estado_Act" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Apellidos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Nombres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Sexo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fec_Nacimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ciudad_Nac" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Estado_Civil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="N_Salario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Nivel_Estudio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Profesion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cargo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Dependencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Pagaduria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Num_Per_Car" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Residente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ciudad_Res" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fecha_Resid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Aficion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Cont" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Tratamiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Nickname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Razon_Soc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Sigla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Icn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Acto_Creac" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ciudad_Cre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Sector" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Tipo_Sociedad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Objeto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Acto_Ad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fec_Acto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Sector_Pub" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Nro_Empleados" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fec_Registro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Sueldo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fec_Fundacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Vigencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Fondo_Emp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Emp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Pais_Nac" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Pais_Seg_Nac" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Num_Hijos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Frec_Pago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Salario_Liquido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Salario_Embar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Otros_Ing" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Desc_Otros_Ing" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Proposito_Afi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ori_Fon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Prom_Transac" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Nomb" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Salario_Neto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Apellido_1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Apellido_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo_cliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pagaduria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MujerFam" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_operf_ext" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="B_resultado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_mjs" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_PROMEDIOTRANSAC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_min" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_max" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_unid_medida" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_excedente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_PROMEDIOTRANSACResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_PROMEDIOTRANSACResult" type="tns:ArrayOfPromediotransacDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPromediotransacDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="promediotransacDTO" nillable="true" type="tns:promediotransacDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="promediotransacDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Min" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Max" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Unid_Medida" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Excedente" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_REPRELEG">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo_cli" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo_emp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_desde" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_hasta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_respresent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_autorizado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_limite_atr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_grupo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_cert_num" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_REPRELEGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_REPRELEGResult" type="tns:ArrayOfReprelegDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfReprelegDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="reprelegDTO" nillable="true" type="tns:reprelegDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="reprelegDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Codigo_Cli" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Codigo_Emp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Desde" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Hasta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Respresent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Autorizado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Limite_Atr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Grupo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Cert_Num" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_TIPOCLIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_descripcion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_TIPOCLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_TIPOCLIENTEResult" type="tns:ArrayOfTipoclienteDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTipoclienteDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="tipoclienteDTO" nillable="true" type="tns:tipoclienteDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="tipoclienteDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_WEBACTDATOS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_consec" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_domicilio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_ingresos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_oficina" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_e_mail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_emp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cargo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_per_tran_col" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_per_tran_dol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_rep_legal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_razon_soc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_sigla" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_llegada" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_proc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_WEBACTDATOSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_WEBACTDATOSResult" type="tns:ArrayOfWebactdatosDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWebactdatosDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="webactdatosDTO" nillable="true" type="tns:webactdatosDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="webactdatosDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Consec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Cliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Domicilio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Ingresos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Oficina" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_E_Mail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Emp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cargo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Per_Tran_Col" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Per_Tran_Dol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Rep_Legal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Razon_Soc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Sigla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Usu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fecha_Llegada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fecha_Proc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Estrato" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Barrio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Ciudad_Res" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Estado_Civil" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_OPERTATIVO_WEBACTDATOS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_consec" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_domicilio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_ingresos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_oficina" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_e_mail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_emp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cargo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_per_tran_col" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_per_tran_dol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_rep_legal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_razon_soc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_sigla" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_llegada" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_proc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="operacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_estrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_barrio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_ciudadRes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_estado_civil" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_OPERTATIVO_WEBACTDATOSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WC_OPERTATIVO_WEBACTDATOSResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_PROMEDIOTRANSACPER">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_persona" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_unid_medida" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_promedio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_PROMEDIOTRANSACPERResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_PROMEDIOTRANSACPERResult" type="tns:ArrayOfPromediotransacperDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPromediotransacperDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="promediotransacperDTO" nillable="true" type="tns:promediotransacperDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="promediotransacperDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Persona" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Unid_Medida" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Promedio" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_ESTADOCUENTAISERVICE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_producto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_ESTADOCUENTAISERVICEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_ESTADOCUENTAISERVICEResult" type="tns:ArrayOfDatoDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDatoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="datoDTO" nillable="true" type="tns:datoDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="datoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Linea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cupo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fechapago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Valorpago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Radicado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Transaccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Acumulado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Numapo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Disponible" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cuenta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Numero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fecha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Plazo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fechafin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cuota" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Saldocapital" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Concepto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Saldo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Numlista" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Numdevolucion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoTran" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_ESTADOCUENTAIISERVICE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xnum_producto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_producto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_ESTADOCUENTAIISERVICEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_ESTADOCUENTAIISERVICEResult" type="tns:ArrayOfDatoDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_PROGRAMA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xc_cod_credi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_tip_liq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_fuente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_req_cup" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_rec_sal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cuo_rec" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_cob_mor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_tipo_gracia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_atributo_apl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_gra_cap" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_for_per_gra_cap" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_mod_int" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_val_min_ref" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_val_max_ref" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_for_des" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_gar_req" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_por_gar" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tip_cap" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tip_cal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_acum_saldo_max" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_prior_lin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_for_gra" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_por_max_pri" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tip_mor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_per_gradiente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_num_cre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_prod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_amortiza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_porc_estudio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_rec_plazo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_unidad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_PROGRAMAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_PROGRAMAResult" type="tns:ArrayOfProgramaDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProgramaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="programaDTO" nillable="true" type="tns:programaDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="programaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="C_Cod_Credi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Tipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Tip_Liq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Fuente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Req_Cup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Rec_Sal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cuo_Rec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Cob_Mor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Tipo_Gracia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Atributo_Apl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Gra_Cap" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_For_Per_Gra_Cap" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Mod_Int" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Val_Min_Ref" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Val_Max_Ref" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_For_Des" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Gar_Req" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Por_Gar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tip_Cap" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tip_Cal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Acum_Saldo_Max" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Prior_Lin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_For_Gra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Por_Max_Pri" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tip_Mor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Per_Gradiente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Num_Cre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Prod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Amortiza" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Porc_Estudio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Rec_Plazo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Unidad" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_TIPOGARANTIA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_tip_gar_sfc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_pdi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_TIPOGARANTIAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_TIPOGARANTIAResult" type="tns:ArrayOfTipogarantiaDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTipogarantiaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="tipogarantiaDTO" nillable="true" type="tns:tipogarantiaDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="tipogarantiaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Tip_Gar_Sfc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Pdi" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_PERIODOS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tip_per" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_num_dias" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_num_mes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_per_ano" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tip_cal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_PERIODOSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_PERIODOSResult" type="tns:ArrayOfPeriodosDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPeriodosDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="periodosDTO" nillable="true" type="tns:periodosDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="periodosDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tip_Per" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Num_Dias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Num_Mes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Per_Ano" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tip_Cal" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_CONSULTACREDITO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_CONSULTACREDITOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_CONSULTACREDITOResult" type="tns:ArrayOfConsultacreditoDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsultacreditoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="consultacreditoDTO" nillable="true" type="tns:consultacreditoDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="consultacreditoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_tipo_iden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_identificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_num_radic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_cod_desti" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_cod_desem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_cod_credi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_monto_apro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_f_apro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_saldo_cap" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_f_prox_pago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_f_ult_pago" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_CUENTA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xc_num_cuenta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_linea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_ofic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_destino" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_destino" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_modalidad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_aper" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_cier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_saldo_total" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_saldo_canje" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_calc_tas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tip_tas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_tas_int" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_desv_tasa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_int" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_saldo_int" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_tot_interes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_tot_retencion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_tot_ret_int" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tip_his" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_excenta_ret" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_renta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_por_renta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_moneda" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_beneficiario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_CUENTAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_CUENTAResult" type="tns:ArrayOfCuentaDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCuentaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="cuentaDTO" nillable="true" type="tns:cuentaDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="cuentaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="C_Num_Cuenta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Linea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Ofic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Destino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Destino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Modalidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fecha_Aper" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fecha_Cier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Saldo_Total" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Saldo_Canje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Calc_Tas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tip_Tas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Tas_Int" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Desv_Tasa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fecha_Int" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Saldo_Int" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Tot_Interes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Tot_Retencion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Tot_Ret_Int" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tip_His" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Excenta_Ret" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Renta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Por_Renta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Moneda" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Beneficiario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_VALIDAR_CUENTA_CONTRACTUAL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="c_num_contrac" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_VALIDAR_CUENTA_CONTRACTUALResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_VALIDAR_CUENTA_CONTRACTUALResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_OPERTATIVO_CUENTA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xc_num_cuenta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_linea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_ofic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_destino" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_destino" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_modalidad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_aper" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_cier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_saldo_total" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_saldo_canje" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_calc_tas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tip_tas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_tas_int" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_desv_tasa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_int" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_saldo_int" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_tot_interes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_tot_retencion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_tot_ret_int" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tip_his" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_excenta_ret" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_renta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_por_renta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_moneda" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_beneficiario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="operacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_OPERTATIVO_CUENTAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_OPERTATIVO_CUENTAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_DESEMBOLSO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_num_radic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_desti" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_desem" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_cod_credi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_monto_sol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_monto_apro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_saldo_cap" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_f_sol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_f_apro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_f_ini" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_f_ter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_cuota" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cuo_pag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_f_prox_pago" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_f_ult_pago" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_dia_habil" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_plazo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_for_pla" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_for_pag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_tipo_gracia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_atributo_apl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_periodo_gra" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_for_per_gra" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_presupuesto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_tipo_liq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_periodic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_estado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_DESEMBOLSOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_DESEMBOLSOResult" type="tns:ArrayOfDesembolsoDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDesembolsoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="desembolsoDTO" nillable="true" type="tns:desembolsoDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="desembolsoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Num_Radic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Desti" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Desem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Cod_Credi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Cliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Monto_Sol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Monto_Apro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Saldo_Cap" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_F_Sol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_F_Apro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_F_Ini" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_F_Ter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Cuota" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cuo_Pag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_F_Prox_Pago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_F_Ult_Pago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Dia_Habil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Plazo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_For_Pla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_For_Pag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Tipo_Gracia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Atributo_Apl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Periodo_Gra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_For_Per_Gra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Presupuesto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Tipo_Liq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Periodic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Estado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_OPERTATIVO_DESEMBOLSO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_num_radic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_desti" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_desem" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_cod_credi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_monto_sol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_monto_apro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_saldo_cap" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_f_sol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_f_apro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_f_ini" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_f_ter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_cuota" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cuo_pag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_f_prox_pago" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_f_ult_pago" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_dia_habil" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_plazo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_for_pla" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_for_pag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_tipo_gracia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_atributo_apl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_periodo_gra" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_for_per_gra" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_presupuesto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_tipo_liq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_periodic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="operacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_OPERTATIVO_DESEMBOLSOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_OPERTATIVO_DESEMBOLSOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_OPERACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_ope" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_ope" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_caj" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_ofic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_real" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xh_hora" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_oper" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_reg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_num_comp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_comp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_num_refer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_reversion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_autoriz" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_OPERACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_OPERACIONResult" type="tns:ArrayOfOperacionDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOperacionDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="operacionDTO" nillable="true" type="tns:operacionDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="operacionDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Ope" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Ope" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Caj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Ofic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fecha_Real" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="H_Hora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fecha_Oper" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fecha_Reg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Num_Comp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Comp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Num_Refer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Reversion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Autoriz" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_OPERTATIVO_OPERACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_ope" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_ope" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_caj" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_ofic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_real" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xh_hora" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_oper" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_reg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_num_comp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_comp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_num_refer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_reversion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_autoriz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="operacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_OPERTATIVO_OPERACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_OPERTATIVO_OPERACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_CONSULTACUENTAS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_CONSULTACUENTASResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_CONSULTACUENTASResult" type="tns:ArrayOfConsultacuentasDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsultacuentasDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="consultacuentasDTO" nillable="true" type="tns:consultacuentasDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="consultacuentasDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Iden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Identificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Nombre_Cuenta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Num_Cuenta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Saldo_Total" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_CONSULTACUENTASDESTINO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_CONSULTACUENTASDESTINOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_CONSULTACUENTASDESTINOResult" type="tns:ArrayOfConsultacuentasDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_CUENTASCONTRACTUAL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_CUENTASCONTRACTUALResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_CUENTASCONTRACTUALResult" type="tns:ArrayOfConsultacuentasDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_CUENTASAPORTES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_CUENTASAPORTESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_CUENTASAPORTESResult" type="tns:ArrayOfConsultacuentasDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_CONSULTADESEMBOLSO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_num_radic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_CONSULTADESEMBOLSOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_CONSULTADESEMBOLSOResult" type="tns:ArrayOfConsultadesembolsoDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsultadesembolsoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="consultadesembolsoDTO" nillable="true" type="tns:consultadesembolsoDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="consultadesembolsoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Num_Radic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_F_Prox_Pago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Total_Pagar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Otros_Cargos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Intereses" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Capital_Vencido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Valor_Cuota" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Cod_Credi" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_OPERTATIVO_WEBMATRICULACUENTAS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_consec" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_banco" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_cuenta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_numero_cuenta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_nombre_personalizado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_documento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_numero_documento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_modificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_login_apro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="operacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_OPERTATIVO_WEBMATRICULACUENTASResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_OPERTATIVO_WEBMATRICULACUENTASResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_WEBACCESOTEMP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_consec" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_clave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_llegada" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_aprobacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_num_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_transaccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_oper" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_login_apro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_WEBACCESOTEMPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_WEBACCESOTEMPResult" type="tns:ArrayOfWebaccesotempDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWebaccesotempDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="webaccesotempDTO" nillable="true" type="tns:webaccesotempDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="webaccesotempDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Consec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Clave" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Llave" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fecha_Llegada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Fecha_Aprobacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Iden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Num_Identificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Transaccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Oper" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Login_Apro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_OPERTATIVO_WEBACCESOTEMP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_consec" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_clave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_llegada" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_fecha_aprobacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_num_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_transaccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_oper" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_login_apro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="operacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_OPERTATIVO_WEBACCESOTEMPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_OPERTATIVO_WEBACCESOTEMPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_MONEDA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_mon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_abr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tas_prom" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_MONEDAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_MONEDAResult" type="tns:ArrayOfMonedaDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMonedaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="monedaDTO" nillable="true" type="tns:monedaDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="monedaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Mon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Abr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tas_Prom" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_TIPOSERVPORTAL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_serv_portal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_TIPOSERVPORTALResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_TIPOSERVPORTALResult" type="tns:ArrayOfTiposervportalDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTiposervportalDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="tiposervportalDTO" nillable="true" type="tns:tiposervportalDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="tiposervportalDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Serv_Portal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Nombre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_PAGOSERVICIOSPORTAL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_pago_servicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_pago_servicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_valor_servicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_num_factura" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_num_cuenta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_serv_portal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_PAGOSERVICIOSPORTALResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_PAGOSERVICIOSPORTALResult" type="tns:ArrayOfPagoserviciosportalDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPagoserviciosportalDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="pagoserviciosportalDTO" nillable="true" type="tns:pagoserviciosportalDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="pagoserviciosportalDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Pago_Servicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_Pago_Servicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D_Valor_Servicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Num_Factura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Num_Cuenta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Serv_Portal" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_OPERTATIVO_PAGOSERVICIOSPORTAL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_pago_servicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xf_pago_servicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xd_valor_servicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_num_factura" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_num_cuenta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_serv_portal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="operacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_OPERTATIVO_PAGOSERVICIOSPORTALResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_OPERTATIVO_PAGOSERVICIOSPORTALResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_PREGSEGURIDADALEATORIO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_campo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_PREGSEGURIDADALEATORIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_PREGSEGURIDADALEATORIOResult" type="tns:ArrayOfPregseguridadaleatorioDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPregseguridadaleatorioDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="pregseguridadaleatorioDTO" nillable="true" type="tns:pregseguridadaleatorioDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="pregseguridadaleatorioDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Iden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Identificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Campo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_PREGSEGURIDADPER">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_campo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_PREGSEGURIDADPERResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_PREGSEGURIDADPERResult" type="tns:ArrayOfPregseguridadperDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPregseguridadperDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="pregseguridadperDTO" nillable="true" type="tns:pregseguridadperDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="pregseguridadperDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Iden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Identificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Campo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_FACTURAPAGOSERVICIO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_num_factura" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_num_factura" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_serv_portal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_persona" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_FACTURAPAGOSERVICIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_FACTURAPAGOSERVICIOResult" type="tns:ArrayOfFacturapagoservicioDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFacturapagoservicioDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="facturapagoservicioDTO" nillable="true" type="tns:facturapagoservicioDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="facturapagoservicioDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Num_Factura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Num_Factura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Serv_Portal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Persona" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_PAGOSERVICIOESTADOS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_persona" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_PAGOSERVICIOESTADOSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_PAGOSERVICIOESTADOSResult" type="tns:ArrayOfPagoserviciosportalDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_OPERTATIVO_FACTURAPAGOSERVICIO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_num_factura" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xc_num_factura" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_serv_portal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_persona" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="operacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_OPERTATIVO_FACTURAPAGOSERVICIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_OPERTATIVO_FACTURAPAGOSERVICIOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_ESTRATO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_ESTRATOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_ESTRATOResult" type="tns:ArrayOfEstratoDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEstratoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="estratoDTO" nillable="true" type="tns:estratoDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="estratoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="C_Valor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Infadi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cod_Cli" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_BARRIO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_BARRIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_BARRIOResult" type="tns:ArrayOfBarrioDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBarrioDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="barrioDTO" nillable="true" type="tns:barrioDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="barrioDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="C_Barrio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cliente" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_ESTADO_CIVIL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_ESTADO_CIVILResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_ESTADO_CIVILResult" type="tns:ArrayOfEstadoCivilDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEstadoCivilDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="estadoCivilDTO" nillable="true" type="tns:estadoCivilDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="estadoCivilDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="C_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_TELEFONO_OFICINA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_TELEFONO_OFICINAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_TELEFONO_OFICINAResult" type="tns:ArrayOfTelefonoOficinaDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTelefonoOficinaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="telefonoOficinaDTO" nillable="true" type="tns:telefonoOficinaDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="telefonoOficinaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="C_Numero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_extension" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WC_CONSULTAR_TELEFONO_RESIDENCIA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_TELEFONO_RESIDENCIAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_TELEFONO_RESIDENCIAResult" type="tns:ArrayOfTelefonoResidenciaDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTelefonoResidenciaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="telefonoResidenciaDTO" nillable="true" type="tns:telefonoResidenciaDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="telefonoResidenciaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="C_Numero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cliente" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_NUM_CELULAR_CLIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_NUM_CELULAR_CLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_NUM_CELULAR_CLIENTEResult" type="tns:ArrayOfTelefonoResidenciaDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_TIPO_VIVIENDA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WC_CONSULTAR_TIPO_VIVIENDAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WC_CONSULTAR_TIPO_VIVIENDAResult" type="tns:ArrayOfTipoViviendaDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTipoViviendaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="tipoViviendaDTO" nillable="true" type="tns:tipoViviendaDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="tipoViviendaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_Tipo_Vivienda" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_Cliente" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_RELACION_PEP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_per" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_pep_rel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cargo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_rel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_RELACION_PEPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_RELACION_PEPResult" type="tns:ArrayOfRelacionPepDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRelacionPepDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="relacionPepDTO" nillable="true" type="tns:relacionPepDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="relacionPepDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ICodPer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ICodPerRel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ICodCargo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITipoRel" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_RELACION_OTRA_PER">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_consecutivo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_per" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_per_rel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_vinculo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_RELACION_OTRA_PERResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_RELACION_OTRA_PERResult" type="tns:ArrayOfRelacionOtrPerDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRelacionOtrPerDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="relacionOtrPerDTO" nillable="true" type="tns:relacionOtrPerDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="relacionOtrPerDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IConsecutivo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ICodPer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ICodPerRel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IVinculo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_DIRECCION_PERSONA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_tipo_dir" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_DIRECCION_PERSONAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_DIRECCION_PERSONAResult" type="tns:ArrayOfDireccionDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDireccionDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="direccionDTO" nillable="true" type="tns:direccionDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="direccionDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IConsecutivo1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ICliente1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IClaseInm1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITipoDir1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CDireccion1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaDesde1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaHasta1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CBarrio1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DVlrCargo1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CArrendatario1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CTelArrendatario1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CCodigoPOS1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ICTipoViv1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ICiudad1" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_INF_ADI_CLIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_infadi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_INF_ADI_CLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_INF_ADI_CLIENTEResult" type="tns:ArrayOfInfAdiClienteDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInfAdiClienteDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="infAdiClienteDTO" nillable="true" type="tns:infAdiClienteDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="infAdiClienteDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ICodCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ICodInfAdi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CValor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_ORIGEN_FONDOS_PER">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_per" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_ORIGEN_FONDOS_PERResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_ORIGEN_FONDOS_PERResult" type="tns:ArrayOfOrigenFondoPersonaDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOrigenFondoPersonaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="origenFondoPersonaDTO" nillable="true" type="tns:origenFondoPersonaDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="origenFondoPersonaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ICodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_PROPOSITO_AFL_PER">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_per" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_PROPOSITO_AFL_PERResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_PROPOSITO_AFL_PERResult" type="tns:ArrayOfPropositoAfiliacionPerDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPropositoAfiliacionPerDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="propositoAfiliacionPerDTO" nillable="true" type="tns:propositoAfiliacionPerDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="propositoAfiliacionPerDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ICodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_CONSULTAR_REFERENCIAS_PERSONA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xi_cod_per" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_CONSULTAR_REFERENCIAS_PERSONAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_CONSULTAR_REFERENCIAS_PERSONAResult" type="tns:ArrayOfReferenciaPersonaDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfReferenciaPersonaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="referenciaPersonaDTO" nillable="true" type="tns:referenciaPersonaDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="referenciaPersonaDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IConsecutivo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ICodPersona" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CNombres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CTelefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CDescRefer" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WC_CONSULTAR_EMPRESASoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_EMPRESA" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_EMPRESASoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_EMPRESAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CARGOSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CARGO" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CARGOSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CARGOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CIUDADSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CIUDAD" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CIUDADSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CIUDADResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_OFICINASoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_OFICINA" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_OFICINASoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_OFICINAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PERSONASSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PERSONAS" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PERSONASSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PERSONASResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PROMEDIOTRANSACSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PROMEDIOTRANSAC" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PROMEDIOTRANSACSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PROMEDIOTRANSACResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_REPRELEGSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_REPRELEG" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_REPRELEGSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_REPRELEGResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_TIPOCLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_TIPOCLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_TIPOCLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_TIPOCLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_WEBACTDATOSSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_WEBACTDATOS" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_WEBACTDATOSSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_WEBACTDATOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_WEBACTDATOSSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_WEBACTDATOS" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_WEBACTDATOSSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_WEBACTDATOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PROMEDIOTRANSACPERSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PROMEDIOTRANSACPER" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PROMEDIOTRANSACPERSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PROMEDIOTRANSACPERResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_ESTADOCUENTAISERVICESoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_ESTADOCUENTAISERVICE" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_ESTADOCUENTAISERVICESoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_ESTADOCUENTAISERVICEResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_ESTADOCUENTAIISERVICESoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_ESTADOCUENTAIISERVICE" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_ESTADOCUENTAIISERVICESoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_ESTADOCUENTAIISERVICEResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PROGRAMASoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PROGRAMA" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PROGRAMASoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PROGRAMAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_TIPOGARANTIASoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_TIPOGARANTIA" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_TIPOGARANTIASoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_TIPOGARANTIAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PERIODOSSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PERIODOS" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PERIODOSSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PERIODOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CONSULTACREDITOSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CONSULTACREDITO" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CONSULTACREDITOSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CONSULTACREDITOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CUENTASoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CUENTA" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CUENTASoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CUENTAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_VALIDAR_CUENTA_CONTRACTUALSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_VALIDAR_CUENTA_CONTRACTUAL" />
+  </wsdl:message>
+  <wsdl:message name="WS_VALIDAR_CUENTA_CONTRACTUALSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_VALIDAR_CUENTA_CONTRACTUALResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_CUENTASoapIn">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_CUENTA" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_CUENTASoapOut">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_CUENTAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_DESEMBOLSOSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_DESEMBOLSO" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_DESEMBOLSOSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_DESEMBOLSOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_DESEMBOLSOSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_DESEMBOLSO" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_DESEMBOLSOSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_DESEMBOLSOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_OPERACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_OPERACION" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_OPERACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_OPERACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_OPERACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_OPERACION" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_OPERACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_OPERACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CONSULTACUENTASSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CONSULTACUENTAS" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CONSULTACUENTASSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CONSULTACUENTASResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CONSULTACUENTASDESTINOSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CONSULTACUENTASDESTINO" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CONSULTACUENTASDESTINOSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CONSULTACUENTASDESTINOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CUENTASCONTRACTUALSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CUENTASCONTRACTUAL" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CUENTASCONTRACTUALSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CUENTASCONTRACTUALResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CUENTASAPORTESSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CUENTASAPORTES" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CUENTASAPORTESSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CUENTASAPORTESResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CONSULTADESEMBOLSOSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CONSULTADESEMBOLSO" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_CONSULTADESEMBOLSOSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_CONSULTADESEMBOLSOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_WEBMATRICULACUENTASSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_WEBMATRICULACUENTAS" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_WEBMATRICULACUENTASSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_WEBMATRICULACUENTASResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_WEBACCESOTEMPSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_WEBACCESOTEMP" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_WEBACCESOTEMPSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_WEBACCESOTEMPResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_WEBACCESOTEMPSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_WEBACCESOTEMP" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_WEBACCESOTEMPSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_WEBACCESOTEMPResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_MONEDASoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_MONEDA" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_MONEDASoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_MONEDAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_TIPOSERVPORTALSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_TIPOSERVPORTAL" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_TIPOSERVPORTALSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_TIPOSERVPORTALResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PAGOSERVICIOSPORTALSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PAGOSERVICIOSPORTAL" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PAGOSERVICIOSPORTALSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PAGOSERVICIOSPORTALResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_PAGOSERVICIOSPORTALSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_PAGOSERVICIOSPORTAL" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_PAGOSERVICIOSPORTALSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_PAGOSERVICIOSPORTALResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PREGSEGURIDADALEATORIOSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PREGSEGURIDADALEATORIO" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PREGSEGURIDADALEATORIOSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PREGSEGURIDADALEATORIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PREGSEGURIDADPERSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PREGSEGURIDADPER" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PREGSEGURIDADPERSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PREGSEGURIDADPERResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_FACTURAPAGOSERVICIOSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_FACTURAPAGOSERVICIO" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_FACTURAPAGOSERVICIOSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_FACTURAPAGOSERVICIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PAGOSERVICIOESTADOSSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PAGOSERVICIOESTADOS" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_PAGOSERVICIOESTADOSSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_PAGOSERVICIOESTADOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_FACTURAPAGOSERVICIOSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_FACTURAPAGOSERVICIO" />
+  </wsdl:message>
+  <wsdl:message name="WC_OPERTATIVO_FACTURAPAGOSERVICIOSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_OPERTATIVO_FACTURAPAGOSERVICIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_ESTRATOSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_ESTRATO" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_ESTRATOSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_ESTRATOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_BARRIOSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_BARRIO" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_BARRIOSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_BARRIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_ESTADO_CIVILSoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_ESTADO_CIVIL" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_ESTADO_CIVILSoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_ESTADO_CIVILResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_TELEFONO_OFICINASoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_TELEFONO_OFICINA" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_TELEFONO_OFICINASoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_TELEFONO_OFICINAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_TELEFONO_RESIDENCIASoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_TELEFONO_RESIDENCIA" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_TELEFONO_RESIDENCIASoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_TELEFONO_RESIDENCIAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_NUM_CELULAR_CLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_NUM_CELULAR_CLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_NUM_CELULAR_CLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_NUM_CELULAR_CLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_TIPO_VIVIENDASoapIn">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_TIPO_VIVIENDA" />
+  </wsdl:message>
+  <wsdl:message name="WC_CONSULTAR_TIPO_VIVIENDASoapOut">
+    <wsdl:part name="parameters" element="tns:WC_CONSULTAR_TIPO_VIVIENDAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_RELACION_PEPSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_RELACION_PEP" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_RELACION_PEPSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_RELACION_PEPResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_RELACION_OTRA_PERSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_RELACION_OTRA_PER" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_RELACION_OTRA_PERSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_RELACION_OTRA_PERResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_DIRECCION_PERSONASoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_DIRECCION_PERSONA" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_DIRECCION_PERSONASoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_DIRECCION_PERSONAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_INF_ADI_CLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_INF_ADI_CLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_INF_ADI_CLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_INF_ADI_CLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_ORIGEN_FONDOS_PERSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_ORIGEN_FONDOS_PER" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_ORIGEN_FONDOS_PERSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_ORIGEN_FONDOS_PERResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_PROPOSITO_AFL_PERSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_PROPOSITO_AFL_PER" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_PROPOSITO_AFL_PERSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_PROPOSITO_AFL_PERResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_REFERENCIAS_PERSONASoapIn">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_REFERENCIAS_PERSONA" />
+  </wsdl:message>
+  <wsdl:message name="WS_CONSULTAR_REFERENCIAS_PERSONASoapOut">
+    <wsdl:part name="parameters" element="tns:WS_CONSULTAR_REFERENCIAS_PERSONAResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSClientCygnusSoap">
+    <wsdl:operation name="WC_CONSULTAR_EMPRESA">
+      <wsdl:input message="tns:WC_CONSULTAR_EMPRESASoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_EMPRESASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CARGO">
+      <wsdl:input message="tns:WC_CONSULTAR_CARGOSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_CARGOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CIUDAD">
+      <wsdl:input message="tns:WC_CONSULTAR_CIUDADSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_CIUDADSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_OFICINA">
+      <wsdl:input message="tns:WC_CONSULTAR_OFICINASoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_OFICINASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PERSONAS">
+      <wsdl:input message="tns:WC_CONSULTAR_PERSONASSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_PERSONASSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PROMEDIOTRANSAC">
+      <wsdl:input message="tns:WC_CONSULTAR_PROMEDIOTRANSACSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_PROMEDIOTRANSACSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_REPRELEG">
+      <wsdl:input message="tns:WC_CONSULTAR_REPRELEGSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_REPRELEGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TIPOCLIENTE">
+      <wsdl:input message="tns:WC_CONSULTAR_TIPOCLIENTESoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_TIPOCLIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_WEBACTDATOS">
+      <wsdl:input message="tns:WC_CONSULTAR_WEBACTDATOSSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_WEBACTDATOSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_WEBACTDATOS">
+      <wsdl:input message="tns:WC_OPERTATIVO_WEBACTDATOSSoapIn" />
+      <wsdl:output message="tns:WC_OPERTATIVO_WEBACTDATOSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PROMEDIOTRANSACPER">
+      <wsdl:input message="tns:WC_CONSULTAR_PROMEDIOTRANSACPERSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_PROMEDIOTRANSACPERSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_ESTADOCUENTAISERVICE">
+      <wsdl:input message="tns:WC_CONSULTAR_ESTADOCUENTAISERVICESoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_ESTADOCUENTAISERVICESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_ESTADOCUENTAIISERVICE">
+      <wsdl:input message="tns:WC_CONSULTAR_ESTADOCUENTAIISERVICESoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_ESTADOCUENTAIISERVICESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PROGRAMA">
+      <wsdl:input message="tns:WC_CONSULTAR_PROGRAMASoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_PROGRAMASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TIPOGARANTIA">
+      <wsdl:input message="tns:WC_CONSULTAR_TIPOGARANTIASoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_TIPOGARANTIASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PERIODOS">
+      <wsdl:input message="tns:WC_CONSULTAR_PERIODOSSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_PERIODOSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CONSULTACREDITO">
+      <wsdl:input message="tns:WC_CONSULTAR_CONSULTACREDITOSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_CONSULTACREDITOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CUENTA">
+      <wsdl:input message="tns:WC_CONSULTAR_CUENTASoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_CUENTASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_VALIDAR_CUENTA_CONTRACTUAL">
+      <wsdl:input message="tns:WS_VALIDAR_CUENTA_CONTRACTUALSoapIn" />
+      <wsdl:output message="tns:WS_VALIDAR_CUENTA_CONTRACTUALSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_CUENTA">
+      <wsdl:input message="tns:WC_OPERTATIVO_CUENTASoapIn" />
+      <wsdl:output message="tns:WC_OPERTATIVO_CUENTASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_DESEMBOLSO">
+      <wsdl:input message="tns:WC_CONSULTAR_DESEMBOLSOSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_DESEMBOLSOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_DESEMBOLSO">
+      <wsdl:input message="tns:WC_OPERTATIVO_DESEMBOLSOSoapIn" />
+      <wsdl:output message="tns:WC_OPERTATIVO_DESEMBOLSOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_OPERACION">
+      <wsdl:input message="tns:WC_CONSULTAR_OPERACIONSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_OPERACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_OPERACION">
+      <wsdl:input message="tns:WC_OPERTATIVO_OPERACIONSoapIn" />
+      <wsdl:output message="tns:WC_OPERTATIVO_OPERACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CONSULTACUENTAS">
+      <wsdl:input message="tns:WC_CONSULTAR_CONSULTACUENTASSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_CONSULTACUENTASSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CONSULTACUENTASDESTINO">
+      <wsdl:input message="tns:WC_CONSULTAR_CONSULTACUENTASDESTINOSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_CONSULTACUENTASDESTINOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CUENTASCONTRACTUAL">
+      <wsdl:input message="tns:WC_CONSULTAR_CUENTASCONTRACTUALSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_CUENTASCONTRACTUALSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CUENTASAPORTES">
+      <wsdl:input message="tns:WC_CONSULTAR_CUENTASAPORTESSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_CUENTASAPORTESSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CONSULTADESEMBOLSO">
+      <wsdl:input message="tns:WC_CONSULTAR_CONSULTADESEMBOLSOSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_CONSULTADESEMBOLSOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_WEBMATRICULACUENTAS">
+      <wsdl:input message="tns:WC_OPERTATIVO_WEBMATRICULACUENTASSoapIn" />
+      <wsdl:output message="tns:WC_OPERTATIVO_WEBMATRICULACUENTASSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_WEBACCESOTEMP">
+      <wsdl:input message="tns:WC_CONSULTAR_WEBACCESOTEMPSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_WEBACCESOTEMPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_WEBACCESOTEMP">
+      <wsdl:input message="tns:WC_OPERTATIVO_WEBACCESOTEMPSoapIn" />
+      <wsdl:output message="tns:WC_OPERTATIVO_WEBACCESOTEMPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_MONEDA">
+      <wsdl:input message="tns:WC_CONSULTAR_MONEDASoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_MONEDASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TIPOSERVPORTAL">
+      <wsdl:input message="tns:WC_CONSULTAR_TIPOSERVPORTALSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_TIPOSERVPORTALSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PAGOSERVICIOSPORTAL">
+      <wsdl:input message="tns:WC_CONSULTAR_PAGOSERVICIOSPORTALSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_PAGOSERVICIOSPORTALSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_PAGOSERVICIOSPORTAL">
+      <wsdl:input message="tns:WC_OPERTATIVO_PAGOSERVICIOSPORTALSoapIn" />
+      <wsdl:output message="tns:WC_OPERTATIVO_PAGOSERVICIOSPORTALSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PREGSEGURIDADALEATORIO">
+      <wsdl:input message="tns:WC_CONSULTAR_PREGSEGURIDADALEATORIOSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_PREGSEGURIDADALEATORIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PREGSEGURIDADPER">
+      <wsdl:input message="tns:WC_CONSULTAR_PREGSEGURIDADPERSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_PREGSEGURIDADPERSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_FACTURAPAGOSERVICIO">
+      <wsdl:input message="tns:WC_CONSULTAR_FACTURAPAGOSERVICIOSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_FACTURAPAGOSERVICIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PAGOSERVICIOESTADOS">
+      <wsdl:input message="tns:WC_CONSULTAR_PAGOSERVICIOESTADOSSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_PAGOSERVICIOESTADOSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_FACTURAPAGOSERVICIO">
+      <wsdl:input message="tns:WC_OPERTATIVO_FACTURAPAGOSERVICIOSoapIn" />
+      <wsdl:output message="tns:WC_OPERTATIVO_FACTURAPAGOSERVICIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_ESTRATO">
+      <wsdl:input message="tns:WC_CONSULTAR_ESTRATOSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_ESTRATOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_BARRIO">
+      <wsdl:input message="tns:WC_CONSULTAR_BARRIOSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_BARRIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_ESTADO_CIVIL">
+      <wsdl:input message="tns:WC_CONSULTAR_ESTADO_CIVILSoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_ESTADO_CIVILSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TELEFONO_OFICINA">
+      <wsdl:input message="tns:WC_CONSULTAR_TELEFONO_OFICINASoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_TELEFONO_OFICINASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TELEFONO_RESIDENCIA">
+      <wsdl:input message="tns:WC_CONSULTAR_TELEFONO_RESIDENCIASoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_TELEFONO_RESIDENCIASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_NUM_CELULAR_CLIENTE">
+      <wsdl:input message="tns:WS_CONSULTAR_NUM_CELULAR_CLIENTESoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_NUM_CELULAR_CLIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TIPO_VIVIENDA">
+      <wsdl:input message="tns:WC_CONSULTAR_TIPO_VIVIENDASoapIn" />
+      <wsdl:output message="tns:WC_CONSULTAR_TIPO_VIVIENDASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_RELACION_PEP">
+      <wsdl:input message="tns:WS_CONSULTAR_RELACION_PEPSoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_RELACION_PEPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_RELACION_OTRA_PER">
+      <wsdl:input message="tns:WS_CONSULTAR_RELACION_OTRA_PERSoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_RELACION_OTRA_PERSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_DIRECCION_PERSONA">
+      <wsdl:input message="tns:WS_CONSULTAR_DIRECCION_PERSONASoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_DIRECCION_PERSONASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_INF_ADI_CLIENTE">
+      <wsdl:input message="tns:WS_CONSULTAR_INF_ADI_CLIENTESoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_INF_ADI_CLIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_ORIGEN_FONDOS_PER">
+      <wsdl:input message="tns:WS_CONSULTAR_ORIGEN_FONDOS_PERSoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_ORIGEN_FONDOS_PERSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_PROPOSITO_AFL_PER">
+      <wsdl:input message="tns:WS_CONSULTAR_PROPOSITO_AFL_PERSoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_PROPOSITO_AFL_PERSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_REFERENCIAS_PERSONA">
+      <wsdl:input message="tns:WS_CONSULTAR_REFERENCIAS_PERSONASoapIn" />
+      <wsdl:output message="tns:WS_CONSULTAR_REFERENCIAS_PERSONASoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSClientCygnusSoap" type="tns:WSClientCygnusSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WC_CONSULTAR_EMPRESA">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_EMPRESA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CARGO">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_CARGO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CIUDAD">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_CIUDAD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_OFICINA">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_OFICINA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PERSONAS">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_PERSONAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PROMEDIOTRANSAC">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_PROMEDIOTRANSAC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_REPRELEG">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_REPRELEG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TIPOCLIENTE">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_TIPOCLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_WEBACTDATOS">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_WEBACTDATOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_WEBACTDATOS">
+      <soap:operation soapAction="http://tempuri.org/WC_OPERTATIVO_WEBACTDATOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PROMEDIOTRANSACPER">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_PROMEDIOTRANSACPER" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_ESTADOCUENTAISERVICE">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_ESTADOCUENTAISERVICE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_ESTADOCUENTAIISERVICE">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_ESTADOCUENTAIISERVICE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PROGRAMA">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_PROGRAMA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TIPOGARANTIA">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_TIPOGARANTIA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PERIODOS">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_PERIODOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CONSULTACREDITO">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_CONSULTACREDITO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CUENTA">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_CUENTA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_VALIDAR_CUENTA_CONTRACTUAL">
+      <soap:operation soapAction="http://tempuri.org/WS_VALIDAR_CUENTA_CONTRACTUAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_CUENTA">
+      <soap:operation soapAction="http://tempuri.org/WC_OPERTATIVO_CUENTA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_DESEMBOLSO">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_DESEMBOLSO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_DESEMBOLSO">
+      <soap:operation soapAction="http://tempuri.org/WC_OPERTATIVO_DESEMBOLSO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_OPERACION">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_OPERACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_OPERACION">
+      <soap:operation soapAction="http://tempuri.org/WC_OPERTATIVO_OPERACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CONSULTACUENTAS">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_CONSULTACUENTAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CONSULTACUENTASDESTINO">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_CONSULTACUENTASDESTINO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CUENTASCONTRACTUAL">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_CUENTASCONTRACTUAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CUENTASAPORTES">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_CUENTASAPORTES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CONSULTADESEMBOLSO">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_CONSULTADESEMBOLSO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_WEBMATRICULACUENTAS">
+      <soap:operation soapAction="http://tempuri.org/WC_OPERTATIVO_WEBMATRICULACUENTAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_WEBACCESOTEMP">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_WEBACCESOTEMP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_WEBACCESOTEMP">
+      <soap:operation soapAction="http://tempuri.org/WC_OPERTATIVO_WEBACCESOTEMP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_MONEDA">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_MONEDA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TIPOSERVPORTAL">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_TIPOSERVPORTAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PAGOSERVICIOSPORTAL">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_PAGOSERVICIOSPORTAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_PAGOSERVICIOSPORTAL">
+      <soap:operation soapAction="http://tempuri.org/WC_OPERTATIVO_PAGOSERVICIOSPORTAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PREGSEGURIDADALEATORIO">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_PREGSEGURIDADALEATORIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PREGSEGURIDADPER">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_PREGSEGURIDADPER" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_FACTURAPAGOSERVICIO">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_FACTURAPAGOSERVICIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PAGOSERVICIOESTADOS">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_PAGOSERVICIOESTADOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_FACTURAPAGOSERVICIO">
+      <soap:operation soapAction="http://tempuri.org/WC_OPERTATIVO_FACTURAPAGOSERVICIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_ESTRATO">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_ESTRATO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_BARRIO">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_BARRIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_ESTADO_CIVIL">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_ESTADO_CIVIL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TELEFONO_OFICINA">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_TELEFONO_OFICINA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TELEFONO_RESIDENCIA">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_TELEFONO_RESIDENCIA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_NUM_CELULAR_CLIENTE">
+      <soap:operation soapAction="http://tempuri.org/WS_CONSULTAR_NUM_CELULAR_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TIPO_VIVIENDA">
+      <soap:operation soapAction="http://tempuri.org/WC_CONSULTAR_TIPO_VIVIENDA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_RELACION_PEP">
+      <soap:operation soapAction="http://tempuri.org/WS_CONSULTAR_RELACION_PEP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_RELACION_OTRA_PER">
+      <soap:operation soapAction="http://tempuri.org/WS_CONSULTAR_RELACION_OTRA_PER" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_DIRECCION_PERSONA">
+      <soap:operation soapAction="http://tempuri.org/WS_CONSULTAR_DIRECCION_PERSONA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_INF_ADI_CLIENTE">
+      <soap:operation soapAction="http://tempuri.org/WS_CONSULTAR_INF_ADI_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_ORIGEN_FONDOS_PER">
+      <soap:operation soapAction="http://tempuri.org/WS_CONSULTAR_ORIGEN_FONDOS_PER" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_PROPOSITO_AFL_PER">
+      <soap:operation soapAction="http://tempuri.org/WS_CONSULTAR_PROPOSITO_AFL_PER" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_REFERENCIAS_PERSONA">
+      <soap:operation soapAction="http://tempuri.org/WS_CONSULTAR_REFERENCIAS_PERSONA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSClientCygnusSoap12" type="tns:WSClientCygnusSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WC_CONSULTAR_EMPRESA">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_EMPRESA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CARGO">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_CARGO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CIUDAD">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_CIUDAD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_OFICINA">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_OFICINA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PERSONAS">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_PERSONAS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PROMEDIOTRANSAC">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_PROMEDIOTRANSAC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_REPRELEG">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_REPRELEG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TIPOCLIENTE">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_TIPOCLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_WEBACTDATOS">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_WEBACTDATOS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_WEBACTDATOS">
+      <soap12:operation soapAction="http://tempuri.org/WC_OPERTATIVO_WEBACTDATOS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PROMEDIOTRANSACPER">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_PROMEDIOTRANSACPER" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_ESTADOCUENTAISERVICE">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_ESTADOCUENTAISERVICE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_ESTADOCUENTAIISERVICE">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_ESTADOCUENTAIISERVICE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PROGRAMA">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_PROGRAMA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TIPOGARANTIA">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_TIPOGARANTIA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PERIODOS">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_PERIODOS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CONSULTACREDITO">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_CONSULTACREDITO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CUENTA">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_CUENTA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_VALIDAR_CUENTA_CONTRACTUAL">
+      <soap12:operation soapAction="http://tempuri.org/WS_VALIDAR_CUENTA_CONTRACTUAL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_CUENTA">
+      <soap12:operation soapAction="http://tempuri.org/WC_OPERTATIVO_CUENTA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_DESEMBOLSO">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_DESEMBOLSO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_DESEMBOLSO">
+      <soap12:operation soapAction="http://tempuri.org/WC_OPERTATIVO_DESEMBOLSO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_OPERACION">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_OPERACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_OPERACION">
+      <soap12:operation soapAction="http://tempuri.org/WC_OPERTATIVO_OPERACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CONSULTACUENTAS">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_CONSULTACUENTAS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CONSULTACUENTASDESTINO">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_CONSULTACUENTASDESTINO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CUENTASCONTRACTUAL">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_CUENTASCONTRACTUAL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CUENTASAPORTES">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_CUENTASAPORTES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_CONSULTADESEMBOLSO">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_CONSULTADESEMBOLSO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_WEBMATRICULACUENTAS">
+      <soap12:operation soapAction="http://tempuri.org/WC_OPERTATIVO_WEBMATRICULACUENTAS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_WEBACCESOTEMP">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_WEBACCESOTEMP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_WEBACCESOTEMP">
+      <soap12:operation soapAction="http://tempuri.org/WC_OPERTATIVO_WEBACCESOTEMP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_MONEDA">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_MONEDA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TIPOSERVPORTAL">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_TIPOSERVPORTAL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PAGOSERVICIOSPORTAL">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_PAGOSERVICIOSPORTAL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_PAGOSERVICIOSPORTAL">
+      <soap12:operation soapAction="http://tempuri.org/WC_OPERTATIVO_PAGOSERVICIOSPORTAL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PREGSEGURIDADALEATORIO">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_PREGSEGURIDADALEATORIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PREGSEGURIDADPER">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_PREGSEGURIDADPER" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_FACTURAPAGOSERVICIO">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_FACTURAPAGOSERVICIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_PAGOSERVICIOESTADOS">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_PAGOSERVICIOESTADOS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_OPERTATIVO_FACTURAPAGOSERVICIO">
+      <soap12:operation soapAction="http://tempuri.org/WC_OPERTATIVO_FACTURAPAGOSERVICIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_ESTRATO">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_ESTRATO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_BARRIO">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_BARRIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_ESTADO_CIVIL">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_ESTADO_CIVIL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TELEFONO_OFICINA">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_TELEFONO_OFICINA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TELEFONO_RESIDENCIA">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_TELEFONO_RESIDENCIA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_NUM_CELULAR_CLIENTE">
+      <soap12:operation soapAction="http://tempuri.org/WS_CONSULTAR_NUM_CELULAR_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WC_CONSULTAR_TIPO_VIVIENDA">
+      <soap12:operation soapAction="http://tempuri.org/WC_CONSULTAR_TIPO_VIVIENDA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_RELACION_PEP">
+      <soap12:operation soapAction="http://tempuri.org/WS_CONSULTAR_RELACION_PEP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_RELACION_OTRA_PER">
+      <soap12:operation soapAction="http://tempuri.org/WS_CONSULTAR_RELACION_OTRA_PER" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_DIRECCION_PERSONA">
+      <soap12:operation soapAction="http://tempuri.org/WS_CONSULTAR_DIRECCION_PERSONA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_INF_ADI_CLIENTE">
+      <soap12:operation soapAction="http://tempuri.org/WS_CONSULTAR_INF_ADI_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_ORIGEN_FONDOS_PER">
+      <soap12:operation soapAction="http://tempuri.org/WS_CONSULTAR_ORIGEN_FONDOS_PER" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_PROPOSITO_AFL_PER">
+      <soap12:operation soapAction="http://tempuri.org/WS_CONSULTAR_PROPOSITO_AFL_PER" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_CONSULTAR_REFERENCIAS_PERSONA">
+      <soap12:operation soapAction="http://tempuri.org/WS_CONSULTAR_REFERENCIAS_PERSONA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSClientCygnus">
+    <wsdl:port name="WSClientCygnusSoap" binding="tns:WSClientCygnusSoap">
+      <soap:address location="http://localhost/WSCygnusCooperagro/WSClientCygnus.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSClientCygnusSoap12" binding="tns:WSClientCygnusSoap12">
+      <soap12:address location="http://localhost/WSCygnusCooperagro/WSClientCygnus.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

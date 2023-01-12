@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="iTextPDF5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/iTextPDF5/itext5-itext-xtra-5.5.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/iTextPDF5/itext5-itextpdf-5.5.11-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/iTextPDF5/itext5-itext-xtra-5.5.11-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/iTextPDF5/itext5-xmlworker-5.5.11-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/iTextPDF5/itext5-itextpdf-5.5.11-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/iTextPDF5/itext5-itext-pdfa-5.5.11-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/iTextPDF5/itext5-itext-pdfa-5.5.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/iTextPDF5/itext5-itext-xtra-5.5.11-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/iTextPDF5/itext5-itext-pdfa-5.5.11-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/iTextPDF5/itext5-itextpdf-5.5.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/iTextPDF5/itext5-xmlworker-5.5.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/iTextPDF5/itext5-xmlworker-5.5.11-sources.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

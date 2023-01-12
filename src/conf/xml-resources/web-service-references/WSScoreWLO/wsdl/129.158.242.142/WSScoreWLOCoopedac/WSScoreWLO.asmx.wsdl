@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="WSScoreWLO" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="WSScoreWLO" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="WSScoreWLO">
+      <s:element name="WSScoreWLO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_modelo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_puntaje_cifin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_probab" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_califica" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_monto_tot_obl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_cuotas_mens" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_probab_mora" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSScoreWLOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSScoreWLOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSScoreWLO_detallado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_identificacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_tipo_iden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_modelo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_puntaje_cifin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_probab" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_califica" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_monto_tot_obl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_cuotas_mens" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_probab_mora" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSScoreWLO_detalladoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSScoreWLO_detalladoResult" type="tns:RespScore" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespScore">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Respuesta" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="capacidadPago" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="capacidadPagoCalculada" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="capacidadPagoCalculada_Disponible" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="capacidadPagoCalculada_Utilizada" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="capacidadPagoPerfil" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Liquidez" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Solvencia" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="capacidadDescuentoNomina" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="capacidadDescuentoNomina_Disponible" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="capacidadDescuentoNomina_Utilizada" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="pdi" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NivelRiesgo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Determinacion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="maximoCoparCapacidad" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="maximoLiliquidez" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Criterios" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="resultadoScoring" type="tns:ArrayOfResultadoScoring" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SalFunctionalClass" />
+      <s:complexType name="ResultadoScoring">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Criterio" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Cumplimiento" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfResultadoScoring">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResultadoScoring" nillable="true" type="tns:ResultadoScoring" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WSScoreWLOSoapIn">
+    <wsdl:part name="parameters" element="tns:WSScoreWLO" />
+  </wsdl:message>
+  <wsdl:message name="WSScoreWLOSoapOut">
+    <wsdl:part name="parameters" element="tns:WSScoreWLOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSScoreWLO_detalladoSoapIn">
+    <wsdl:part name="parameters" element="tns:WSScoreWLO_detallado" />
+  </wsdl:message>
+  <wsdl:message name="WSScoreWLO_detalladoSoapOut">
+    <wsdl:part name="parameters" element="tns:WSScoreWLO_detalladoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSScoreWLOSoap">
+    <wsdl:operation name="WSScoreWLO">
+      <wsdl:input message="tns:WSScoreWLOSoapIn" />
+      <wsdl:output message="tns:WSScoreWLOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSScoreWLO_detallado">
+      <wsdl:input message="tns:WSScoreWLO_detalladoSoapIn" />
+      <wsdl:output message="tns:WSScoreWLO_detalladoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSScoreWLOSoap" type="tns:WSScoreWLOSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WSScoreWLO">
+      <soap:operation soapAction="WSScoreWLO/WSScoreWLO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSScoreWLO_detallado">
+      <soap:operation soapAction="WSScoreWLO/WSScoreWLO_detallado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSScoreWLOSoap12" type="tns:WSScoreWLOSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WSScoreWLO">
+      <soap12:operation soapAction="WSScoreWLO/WSScoreWLO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSScoreWLO_detallado">
+      <soap12:operation soapAction="WSScoreWLO/WSScoreWLO_detallado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSScoreWLO">
+    <wsdl:port name="WSScoreWLOSoap" binding="tns:WSScoreWLOSoap">
+      <soap:address location="http://129.158.242.142/WSScoreWLOCoopedac/WSScoreWLO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSScoreWLOSoap12" binding="tns:WSScoreWLOSoap12">
+      <soap12:address location="http://129.158.242.142/WSScoreWLOCoopedac/WSScoreWLO.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
