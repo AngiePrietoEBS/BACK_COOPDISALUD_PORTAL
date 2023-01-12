@@ -6,7 +6,6 @@
 package com.ebssas.wsrestapicoopedac.wscore;
 
 import WSPersonasCygnus.RespuestaCrea;
-import WSPersonasCygnus.RespuestaMenus;
 import WSPersonasCygnus.WSPersonasCygnus;
 import WSPersonasCygnus.WSPersonasCygnusSoap;
 import com.ebssas.wsrestapicoopedac.general.Utilidad;
@@ -198,18 +197,18 @@ public class ConsumoWSPersonaCygnus {
 //        return respuesta;
 //    }
 
-    public RespuestaMenus wsCONSULTATIPOVIVIENDA() {
-        RespuestaMenus respuestaMenus = new RespuestaMenus();
-        try {
-            URL newEndpoint = new URL("http://150.136.154.156/WSPersonasCygnus/WSPersonasCygnus.asmx?WSDL");
-            WSPersonasCygnus service = new WSPersonasCygnus(newEndpoint);
-            WSPersonasCygnusSoap port = service.getWSPersonasCygnusSoap();
-            respuestaMenus = port.consultaTiposVivienda();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return respuestaMenus;
-    }
+//    public RespuestaMenus wsCONSULTATIPOVIVIENDA() {
+//        RespuestaMenus respuestaMenus = new RespuestaMenus();
+//        try {
+//            URL newEndpoint = new URL("http://150.136.154.156/WSPersonasCygnus/WSPersonasCygnus.asmx?WSDL");
+//            WSPersonasCygnus service = new WSPersonasCygnus(newEndpoint);
+//            WSPersonasCygnusSoap port = service.getWSPersonasCygnusSoap();
+//            //respuestaMenus = port.consultaTiposVivienda();
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+//        return respuestaMenus;
+//    }
 
 //    public String wsCREARREFERENCIA(ReferenciaSolCredito referenciaItem, Long idPersonaSygnus) {
 //        String respuesta = "";

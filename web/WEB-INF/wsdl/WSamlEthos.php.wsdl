@@ -25,13 +25,21 @@
   <part name="nombre" type="xsd:string" />
   <part name="token" type="xsd:string" />
   <part name="nit" type="xsd:string" />
-  <part name="hacerConsulta" type="xsd:string" />
-  <part name="ruta" type="xsd:string" /></message>
+  <part name="hacerConsulta" type="xsd:string" /></message>
 <message name="generarPDFResponse">
   <part name="mensaje" type="xsd:string" /></message>
 <message name="probarWSRequest">
   <part name="nombre" type="xsd:string" /></message>
 <message name="probarWSResponse">
+  <part name="mensaje" type="xsd:string" /></message>
+<message name="generarPDFGenericoRequest">
+  <part name="identificacion" type="xsd:string" />
+  <part name="nombre" type="xsd:string" />
+  <part name="token" type="xsd:string" />
+  <part name="nit" type="xsd:string" />
+  <part name="hacerConsulta" type="xsd:string" />
+  <part name="ruta" type="xsd:string" /></message>
+<message name="generarPDFGenericoResponse">
   <part name="mensaje" type="xsd:string" /></message>
 <portType name="dataPortType">
   <operation name="consulltaListas">
@@ -54,6 +62,11 @@
     <input message="tns:probarWSRequest"/>
     <output message="tns:probarWSResponse"/>
   </operation>
+  <operation name="generarPDFGenerico">
+    <documentation>Genera el pdf con ruta y lo guarda en un FTP, es de manera individual</documentation>
+    <input message="tns:generarPDFGenericoRequest"/>
+    <output message="tns:generarPDFGenericoResponse"/>
+  </operation>
 </portType>
 <binding name="dataBinding" type="tns:dataPortType">
   <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
@@ -74,6 +87,11 @@
   </operation>
   <operation name="probarWS">
     <soap:operation soapAction="urn:data#probarWS" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:data" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:data" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="generarPDFGenerico">
+    <soap:operation soapAction="urn:data#generarPDFGenerico" style="rpc"/>
     <input><soap:body use="encoded" namespace="urn:data" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
     <output><soap:body use="encoded" namespace="urn:data" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>

@@ -45,18 +45,19 @@
     <system systemId="http://190.85.106.122:8080/Coopedac/WebServicePSE?wsdl" uri="src/conf/xml-resources/web-service-references/WebServicePSE/wsdl/190.85.106.122_8080/Coopedac/WebServicePSE.wsdl"/>
     <system systemId="http://190.85.106.122:8080/Coopedac/WebServicePSE?xsd=1" uri="src/conf/xml-resources/web-service-references/WebServicePSE/wsdl/190.85.106.122_8080/Coopedac/WebServicePSE.xsd_1.xsd"/>
     <system systemId="http://129.158.242.142/WSSimuladorCreditoCoopedac/WSSimuladorCreditoCoopedac.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/WSSimuladorCreditoCoopedac/wsdl/129.158.242.142/WSSimuladorCreditoCoopedac/WSSimuladorCreditoCoopedac.asmx.wsdl"/>
-    <system systemId="http://129.158.242.142/WSScoreWLOCoopedac/WSScoreWLO.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/WSScoreWLO/wsdl/129.158.242.142/WSScoreWLOCoopedac/WSScoreWLO.asmx.wsdl"/>
     <system systemId="http://129.158.242.142/WSAdministracionCoopedac/WSClientAdministracion.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/WSClientAdministracion/wsdl/129.158.242.142/WSAdministracionCoopedac/WSClientAdministracion.asmx.wsdl"/>
     <system systemId="http://129.158.242.142/WSReglasOtorgamientoCoopedac/WSReglasOtorgamientoCoopedac.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/WSReglasOtorgamientoCoopedac/wsdl/129.158.242.142/WSReglasOtorgamientoCoopedac/WSReglasOtorgamientoCoopedac.asmx.wsdl"/>
 <<<<<<< HEAD
     <system systemId="http://129.158.242.142/WSEstadoCuentaCoopedac/WSClientEstadoCuenta.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/WSClientEstadoCuenta/wsdl/129.158.242.142/WSEstadoCuentaCoopedac/WSClientEstadoCuenta.asmx.wsdl"/>
-    <system systemId="http://129.158.242.142/WSCygnusCoopedac/WSClientCygnus.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/WSClientCygnus/wsdl/129.158.242.142/WSCygnusCoopedac/WSClientCygnus.asmx.wsdl"/>
-    <system systemId="http://129.158.242.142/WSPersonasCygnus/WSPersonasCygnus.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/WSPersonasCygnus/wsdl/129.158.242.142/WSPersonasCygnus/WSPersonasCygnus.asmx.wsdl"/>
 =======
-    <system systemId="http://129.158.242.142/WSCygnusCoopedac/WSClientCygnus.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/WSClientCygnus/wsdl/129.158.242.142/WSCygnusCoopedac/WSClientCygnus.asmx.wsdl"/>
+    
     <system systemId="http://129.158.242.142/WSPersonasCygnus/WSPersonasCygnus.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/WSPersonasCygnus/wsdl/129.158.242.142/WSPersonasCygnus/WSPersonasCygnus.asmx.wsdl"/>
     <system systemId="http://129.158.242.142/WSEstadoCuentaCoopedac/WSClientEstadoCuenta.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/WSClientEstadoCuenta/wsdl/129.158.242.142/WSEstadoCuentaCoopedac/WSClientEstadoCuenta.asmx.wsdl"/>
 >>>>>>> 397d1fb9be3a8127537293afe08c0d7de133f3a0
     <system systemId="http://129.158.242.142/Ws_CuentaAhorros/Ws_CuentaAhorros.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/Ws_CuentaAhorros/wsdl/129.158.242.142/Ws_CuentaAhorros/Ws_CuentaAhorros.asmx.wsdl"/>
     <system systemId="http://129.158.242.142/WsProductosCygnus/WsProductosCygnus.asmx?wsdl" uri="src/conf/xml-resources/web-service-references/WsProductosCygnus/wsdl/129.158.242.142/WsProductosCygnus/WsProductosCygnus.asmx.wsdl"/>
+    <system systemId="http://129.158.242.142/WSCygnusCoopedac/WSClientCygnus.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/WSClientCygnus/wsdl/129.158.242.142/WSCygnusCoopedac/WSClientCygnus.asmx.wsdl"/>
+    <system systemId="http://129.158.242.142/WSPersonasCygnus/WSPersonasCygnus.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/WSPersonasCygnus/wsdl/129.158.242.142/WSPersonasCygnus/WSPersonasCygnus.asmx.wsdl"/>
+    <system systemId="http://129.158.242.142/WSScoreWLOCoopedac/WSScoreWLO.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/WSScoreWLO/wsdl/129.158.242.142/WSScoreWLOCoopedac/WSScoreWLO.asmx.wsdl"/>
+    <system systemId="http://129.158.242.142/WSCygnusCoopedac/WSClientCygnus.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/WSClientCygnus/wsdl/129.158.242.142/WSCygnusCoopedac/WSClientCygnus.asmx.wsdl"/>
 </catalog>
