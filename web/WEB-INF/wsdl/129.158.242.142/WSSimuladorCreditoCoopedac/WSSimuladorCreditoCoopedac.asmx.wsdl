@@ -2,6 +2,41 @@
 <wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="WSSimuladorCreditoCoopedac" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="WSSimuladorCreditoCoopedac" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="WSSimuladorCreditoCoopedac">
+      <s:element name="calculoCupos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pws_identific" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_form_periodic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_cod_credi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_form_plazo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="calculoCuposResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="calculoCuposResult" type="tns:RespuestaCupo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaCupo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SalFunctionalClass">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_max_monto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_max_plazo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_cupo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_tfijos" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_valorCuota" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="R_s_tasa" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SalFunctionalClass" />
       <s:element name="creaCredito">
         <s:complexType>
           <s:sequence>
@@ -56,7 +91,6 @@
           <s:extension base="tns:SalFunctionalClass" />
         </s:complexContent>
       </s:complexType>
-      <s:complexType name="SalFunctionalClass" />
       <s:element name="creaRegPagareCredito">
         <s:complexType>
           <s:sequence>
@@ -493,40 +527,6 @@
           </s:extension>
         </s:complexContent>
       </s:complexType>
-      <s:element name="calculoCupos">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="pws_identific" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_form_periodic" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_cod_credi" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_form_plazo" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="calculoCuposResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="calculoCuposResult" type="tns:RespuestaCupo" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="RespuestaCupo">
-        <s:complexContent mixed="false">
-          <s:extension base="tns:SalFunctionalClass">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="R_s_max_monto" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="R_s_max_plazo" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="R_s_cupo" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="R_s_tfijos" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="R_s_valorCuota" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="R_s_tasa" type="s:string" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
       <s:element name="desembolsoCuenta">
         <s:complexType>
           <s:sequence>
@@ -580,112 +580,14 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="deudaCuotas">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ps_identificacion" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ps_cod_credi" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ps_cod_desti" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ps_num_cuotas" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="deudaCuotasResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="deudaCuotasResult" type="tns:RespuestaValorDeuda" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="RespuestaValorDeuda">
-        <s:complexContent mixed="false">
-          <s:extension base="tns:SalFunctionalClass">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="TipoConsulta" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="Resultado" type="s:string" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:element name="deudaFecha">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ps_identificacion" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ps_cod_credi" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ps_cod_desti" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ps_fecha_pago" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="deudaFechaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="deudaFechaResult" type="tns:RespuestaValorDeuda" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="deudaTotal">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ps_identificacion" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ps_cod_credi" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ps_cod_desti" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="deudaTotalResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="deudaTotalResult" type="tns:RespuestaValorDeuda" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Pago_Creditos">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ps_identif_credito" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ps_num_radic" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ps_cod_desti" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ps_valor" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ps_num_cuotas" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ps_tipo_pago" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ps_fecha_pago" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_bd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_usu" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pws_psw" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Pago_CreditosResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Pago_CreditosResult" type="tns:RespuestaPago" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="RespuestaPago">
-        <s:complexContent mixed="false">
-          <s:extension base="tns:SalFunctionalClass">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="TipoPago" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
-              <s:element minOccurs="0" maxOccurs="1" name="Resultado" type="s:string" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="calculoCuposSoapIn">
+    <wsdl:part name="parameters" element="tns:calculoCupos" />
+  </wsdl:message>
+  <wsdl:message name="calculoCuposSoapOut">
+    <wsdl:part name="parameters" element="tns:calculoCuposResponse" />
+  </wsdl:message>
   <wsdl:message name="creaCreditoSoapIn">
     <wsdl:part name="parameters" element="tns:creaCredito" />
   </wsdl:message>
@@ -758,12 +660,6 @@
   <wsdl:message name="permiteCreditoSoapOut">
     <wsdl:part name="parameters" element="tns:permiteCreditoResponse" />
   </wsdl:message>
-  <wsdl:message name="calculoCuposSoapIn">
-    <wsdl:part name="parameters" element="tns:calculoCupos" />
-  </wsdl:message>
-  <wsdl:message name="calculoCuposSoapOut">
-    <wsdl:part name="parameters" element="tns:calculoCuposResponse" />
-  </wsdl:message>
   <wsdl:message name="desembolsoCuentaSoapIn">
     <wsdl:part name="parameters" element="tns:desembolsoCuenta" />
   </wsdl:message>
@@ -776,31 +672,11 @@
   <wsdl:message name="pruebaConexionSoapOut">
     <wsdl:part name="parameters" element="tns:pruebaConexionResponse" />
   </wsdl:message>
-  <wsdl:message name="deudaCuotasSoapIn">
-    <wsdl:part name="parameters" element="tns:deudaCuotas" />
-  </wsdl:message>
-  <wsdl:message name="deudaCuotasSoapOut">
-    <wsdl:part name="parameters" element="tns:deudaCuotasResponse" />
-  </wsdl:message>
-  <wsdl:message name="deudaFechaSoapIn">
-    <wsdl:part name="parameters" element="tns:deudaFecha" />
-  </wsdl:message>
-  <wsdl:message name="deudaFechaSoapOut">
-    <wsdl:part name="parameters" element="tns:deudaFechaResponse" />
-  </wsdl:message>
-  <wsdl:message name="deudaTotalSoapIn">
-    <wsdl:part name="parameters" element="tns:deudaTotal" />
-  </wsdl:message>
-  <wsdl:message name="deudaTotalSoapOut">
-    <wsdl:part name="parameters" element="tns:deudaTotalResponse" />
-  </wsdl:message>
-  <wsdl:message name="Pago_CreditosSoapIn">
-    <wsdl:part name="parameters" element="tns:Pago_Creditos" />
-  </wsdl:message>
-  <wsdl:message name="Pago_CreditosSoapOut">
-    <wsdl:part name="parameters" element="tns:Pago_CreditosResponse" />
-  </wsdl:message>
   <wsdl:portType name="WSSimuladorCreditoCoopedacSoap">
+    <wsdl:operation name="calculoCupos">
+      <wsdl:input message="tns:calculoCuposSoapIn" />
+      <wsdl:output message="tns:calculoCuposSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="creaCredito">
       <wsdl:input message="tns:creaCreditoSoapIn" />
       <wsdl:output message="tns:creaCreditoSoapOut" />
@@ -849,10 +725,6 @@
       <wsdl:input message="tns:permiteCreditoSoapIn" />
       <wsdl:output message="tns:permiteCreditoSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="calculoCupos">
-      <wsdl:input message="tns:calculoCuposSoapIn" />
-      <wsdl:output message="tns:calculoCuposSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="desembolsoCuenta">
       <wsdl:input message="tns:desembolsoCuentaSoapIn" />
       <wsdl:output message="tns:desembolsoCuentaSoapOut" />
@@ -861,25 +733,18 @@
       <wsdl:input message="tns:pruebaConexionSoapIn" />
       <wsdl:output message="tns:pruebaConexionSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="deudaCuotas">
-      <wsdl:input message="tns:deudaCuotasSoapIn" />
-      <wsdl:output message="tns:deudaCuotasSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="deudaFecha">
-      <wsdl:input message="tns:deudaFechaSoapIn" />
-      <wsdl:output message="tns:deudaFechaSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="deudaTotal">
-      <wsdl:input message="tns:deudaTotalSoapIn" />
-      <wsdl:output message="tns:deudaTotalSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Pago_Creditos">
-      <wsdl:input message="tns:Pago_CreditosSoapIn" />
-      <wsdl:output message="tns:Pago_CreditosSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSSimuladorCreditoCoopedacSoap" type="tns:WSSimuladorCreditoCoopedacSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="calculoCupos">
+      <soap:operation soapAction="WSSimuladorCreditoCoopedac/calculoCupos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="creaCredito">
       <soap:operation soapAction="WSSimuladorCreditoCoopedac/creaCredito" style="document" />
       <wsdl:input>
@@ -988,15 +853,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="calculoCupos">
-      <soap:operation soapAction="WSSimuladorCreditoCoopedac/calculoCupos" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="desembolsoCuenta">
       <soap:operation soapAction="WSSimuladorCreditoCoopedac/desembolsoCuenta" style="document" />
       <wsdl:input>
@@ -1015,45 +871,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="deudaCuotas">
-      <soap:operation soapAction="WSSimuladorCreditoCoopedac/deudaCuotas" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deudaFecha">
-      <soap:operation soapAction="WSSimuladorCreditoCoopedac/deudaFecha" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deudaTotal">
-      <soap:operation soapAction="WSSimuladorCreditoCoopedac/deudaTotal" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Pago_Creditos">
-      <soap:operation soapAction="WSSimuladorCreditoCoopedac/Pago_Creditos" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WSSimuladorCreditoCoopedacSoap12" type="tns:WSSimuladorCreditoCoopedacSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="calculoCupos">
+      <soap12:operation soapAction="WSSimuladorCreditoCoopedac/calculoCupos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="creaCredito">
       <soap12:operation soapAction="WSSimuladorCreditoCoopedac/creaCredito" style="document" />
       <wsdl:input>
@@ -1162,15 +991,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="calculoCupos">
-      <soap12:operation soapAction="WSSimuladorCreditoCoopedac/calculoCupos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="desembolsoCuenta">
       <soap12:operation soapAction="WSSimuladorCreditoCoopedac/desembolsoCuenta" style="document" />
       <wsdl:input>
@@ -1182,42 +1002,6 @@
     </wsdl:operation>
     <wsdl:operation name="pruebaConexion">
       <soap12:operation soapAction="WSSimuladorCreditoCoopedac/pruebaConexion" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deudaCuotas">
-      <soap12:operation soapAction="WSSimuladorCreditoCoopedac/deudaCuotas" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deudaFecha">
-      <soap12:operation soapAction="WSSimuladorCreditoCoopedac/deudaFecha" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deudaTotal">
-      <soap12:operation soapAction="WSSimuladorCreditoCoopedac/deudaTotal" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Pago_Creditos">
-      <soap12:operation soapAction="WSSimuladorCreditoCoopedac/Pago_Creditos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

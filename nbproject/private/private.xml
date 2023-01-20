@@ -19,7 +19,10 @@
             <file>file:/H:/EBS-SAS/Repositorio/Coopedac/Pagina%20Web/Backend/Backend_coopedac/BackendCoopedac/WSRestApiCoopedac/src/java/com/ebssas/wsrestapicoopedac/wscore/ConsumoWSCtasAhorro.java</file>
         </group>
         <group>
-            <file>file:/C:/Users/User/Documents/GitHub/BACK_COOPDISALUD_PORTAL/src/java/com/ebssas/wsrestapicoopedac/response/ResponseAperturaCuentaSolCred.java</file>
+            <file>file:/C:/Users/User/Desktop/Proyectos/Plan-Choque/COOPISALUD/BACK_COOPDISALUD_PORTAL/src/conf/xml-resources/web-service-references/WSSimuladorCreditoCoopedac/wsdl/129.158.242.142/WSSimuladorCreditoCoopedac/WSSimuladorCreditoCoopedac.asmx.wsdl</file>
+            <file>file:/C:/Users/User/Desktop/Proyectos/Plan-Choque/COOPISALUD/BACK_COOPDISALUD_PORTAL/src/java/com/ebssas/wsrestapicoopedac/wscore/ConsumoWSSimuladorCredito.java</file>
+            <file>file:/C:/Users/User/Desktop/Proyectos/Plan-Choque/COOPISALUD/BACK_COOPDISALUD_PORTAL/src/conf/xml-resources/web-service-references/WSClientCygnus/wsdl/129.158.242.142/WSCygnusCoopedac/WSClientCygnus.asmx.wsdl</file>
+            <file>file:/C:/Users/User/Desktop/Proyectos/Plan-Choque/COOPISALUD/BACK_COOPDISALUD_PORTAL/src/java/com/ebssas/wsrestapicoopedac/wscore/ConsumoWSProductoCygnus1.java</file>
         </group>
     </open-files>
 </project-private>
